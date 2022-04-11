@@ -32,7 +32,5 @@ namespace BookStore.Data.EF
         public DbSet<OrderDetails> OrderDetails { get; set; }
         public DbSet<Input> Inputs { get; set; }
         public DbSet<OutPut> OutPuts { get; set; }
-        public DbSet<BookStore.Models.BookViewModel> BookViewModel { get; set; }
-        public DbSet<BookStore.Models.CustomerViewModel> CustomerViewModel { get; set; }
     }
 }

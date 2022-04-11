@@ -20,7 +20,7 @@ namespace BookStore.Data.Configurations
 
 
             builder.Property(x => x.PhoneNumber).IsRequired().HasMaxLength(11);
-            builder.Property(x => x.Email).IsRequired().HasMaxLength(20);
+            builder.Property(x => x.Email).IsRequired().HasMaxLength(60);
 
           
         }

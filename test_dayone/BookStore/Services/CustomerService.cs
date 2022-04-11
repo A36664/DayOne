@@ -18,7 +18,7 @@ namespace BookStore.Services
         public async Task<int> Delete(int customerId)
         {
             var customer = await _context.Customers.FindAsync(customerId);
-            if (customer == null)
+            if (customer != null)
                 _context.Customers.Remove(customer);
             return await _context.SaveChangesAsync();
 

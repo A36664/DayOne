@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BookStore.Models.Carts.CartItemViewModel>
+@{
+    ViewData["Title"] = "GetListItems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Cart Info</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @using (Html.BeginForm("Edit", "Cart", item.BookId))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                       @* @Html.TextBoxFor(x=>item.Quantity, new { @id="txtid",@onchange = "onchangeevent();" })
+                        <script>
+                            function onchangeevent(){
+                                 var val=('#txtid').val();
+                                 quantity=val;
+                            }
+                        </script>*@
+                        <input asp-for="@item.Quantity"  min="0" class="form-control" />
+                    </td>
+                    <td>
+                        <a asp-controller="Book" asp-action="Details" asp-route-bookId="@item.BookId">Details</a> |
+                        <a asp-action="Delete" asp-route-bookId="@item.BookId">Delete</a>|
+                        <a asp-action="UpdateCart" class="updateCart" asp-route-quantity="@item.Quantity" asp-route-bookId="@item.BookId">Update</a>|
+                    </td>
+                </tr>
+            }   }
+        <a asp-action="Checkout" asp-controller="Cart">Checkout</a>|
+    </tbody>
+</table>
+

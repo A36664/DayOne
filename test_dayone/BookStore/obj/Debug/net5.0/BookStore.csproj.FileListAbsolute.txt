@@ -297,3 +297,5 @@ C:\Users\A36664\OneDrive\Desktop\CMC\DayOne\test_dayone\BookStore\obj\Debug\net5
 C:\Users\A36664\OneDrive\Desktop\CMC\DayOne\test_dayone\BookStore\obj\Debug\net5.0\Razor\Views\Customer\EditView.cshtml.g.cs
 C:\Users\A36664\OneDrive\Desktop\CMC\DayOne\test_dayone\BookStore\obj\Debug\net5.0\Razor\Views\Customer\DeleteView.cshtml.g.cs
 C:\Users\A36664\OneDrive\Desktop\CMC\DayOne\test_dayone\BookStore\obj\Debug\net5.0\Razor\Views\Customer\GetCustomesPaging.cshtml.g.cs
+C:\Users\A36664\OneDrive\Desktop\CMC\DayOne\test_dayone\BookStore\obj\Debug\net5.0\Razor\Views\Cart\GetListItems.cshtml.g.cs
+C:\Users\A36664\OneDrive\Desktop\CMC\DayOne\test_dayone\BookStore\obj\Debug\net5.0\Razor\Views\Cart\Checkout.cshtml.g.cs

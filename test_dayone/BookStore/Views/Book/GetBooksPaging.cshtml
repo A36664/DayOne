@@ -55,7 +55,8 @@
             <td>
                 <a asp-action="EditView" asp-controller="Book" asp-route-bookId="@item.Id">Edit</a> |
                 <a asp-controller="Book" asp-action="Details" asp-route-bookId="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-bookId="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-bookId="@item.Id">Delete</a>|
+                <a asp-action="AddToCart" asp-controller="Cart" asp-route-bookId="@item.Id">Add to cart</a>
             </td>
         </tr>
 }

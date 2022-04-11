@@ -25,12 +25,13 @@ namespace BookStore.Controllers
 
             return View(books);
         }
+        [HttpGet("Details")]
         public  async Task<IActionResult> Details(int bookId)
         {
             var book = await _bookService.GetBookById(bookId);  
             return View(book);
         }
-
+        [HttpGet("EditView")]
         public async Task<IActionResult> EditView(int bookId)
         {
             var book = await _bookService.GetBookById(bookId);
@@ -42,12 +43,13 @@ namespace BookStore.Controllers
             var book = await _bookService.Update(request);
             return Redirect("/");
         }
+        [HttpGet("DeleteView")]
         public async Task<IActionResult> DeleteView(int bookId)
         {
             var book = await _bookService.GetBookById(bookId);
             return View(book);
         }
-
+        [HttpPost("Delete")]
         public async Task<IActionResult> Delete(int bookId)
         {
             var book = await _bookService.Delete(bookId);

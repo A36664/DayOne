@@ -1,4 +1,4 @@
-using BookStore.Data.EF;
+﻿using BookStore.Data.EF;
 using BookStore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,10 +29,16 @@ namespace BookStore
             services.AddDbContext<BookStoreContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("booksSolutionDb")));
 
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);  
+            });
+
             //add Di
             services.AddTransient<IBookService,BookService>();
-            services.AddTransient<ICustomerService,CustomerService>();  
-
+            services.AddTransient<ICustomerService,CustomerService>();
+            services.AddTransient<IOrderService, OrderService>();
             services.AddControllersWithViews();
         }
 
@@ -55,7 +61,7 @@ namespace BookStore
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
