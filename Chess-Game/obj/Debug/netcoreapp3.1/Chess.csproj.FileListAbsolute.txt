@@ -23,3 +23,17 @@ C:\Users\A36664\OneDrive\Desktop\CMC\Chess-Game\obj\Debug\netcoreapp3.1\Chess.cs
 C:\Users\A36664\OneDrive\Desktop\CMC\Chess-Game\obj\Debug\netcoreapp3.1\Chess.dll
 C:\Users\A36664\OneDrive\Desktop\CMC\Chess-Game\obj\Debug\netcoreapp3.1\Chess.pdb
 C:\Users\A36664\OneDrive\Desktop\CMC\Chess-Game\obj\Debug\netcoreapp3.1\Chess.genruntimeconfig.cache
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.exe
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.deps.json
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.runtimeconfig.json
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.runtimeconfig.dev.json
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.dll
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.csproj.AssemblyReference.cache
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.AssemblyInfoInputs.cache
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.AssemblyInfo.cs
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.csproj.CoreCompileInputs.cache
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.dll
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.genruntimeconfig.cache

@@ -68,7 +68,6 @@ namespace BookStore.Controllers
                 OrderDetails = orderDetails,
                 CustomerId = request.CheckoutModel.CustomerId
             };
-            //TODO: Add to API
            await  _orderService.CreateOrder(checkoutRequest);
 
 
@@ -105,6 +104,8 @@ namespace BookStore.Controllers
             HttpContext.Session.SetString(SystemConstants.CartSession, JsonConvert.SerializeObject(currentCart));
             return Redirect("/");
         }
+       
+        [HttpPost]
         public IActionResult UpdateCart(int bookId, int quantity)
         {
             var session = HttpContext.Session.GetString(SystemConstants.CartSession);
@@ -128,6 +129,26 @@ namespace BookStore.Controllers
             HttpContext.Session.SetString(SystemConstants.CartSession, JsonConvert.SerializeObject(currentCart));
             return Ok(currentCart);
         }
+
+        [Route("/removecart/{bookId:int}", Name = "removecart")]
+        public IActionResult RemoveCart([FromRoute] int bookId)
+        {
+            var session = HttpContext.Session.GetString(SystemConstants.CartSession);
+            List<CartItemViewModel> currentCart = new List<CartItemViewModel>();
+            if (session != null)
+                currentCart = JsonConvert.DeserializeObject<List<CartItemViewModel>>(session);
+
+            
+            var cartitem = currentCart.Find(p => p.BookId == bookId);
+            if (cartitem != null)
+            {
+                currentCart.Remove(cartitem);
+            }
+
+            HttpContext.Session.SetString(SystemConstants.CartSession, JsonConvert.SerializeObject(currentCart));
+            return RedirectToAction(nameof(GetListItems));
+        }
+
         private CheckoutViewModel GetCheckoutViewModel()
         {
             var session = HttpContext.Session.GetString(SystemConstants.CartSession);

@@ -1,0 +1,17 @@
+﻿
+@using BookStore.Models.Carts
+@using BookStore.Utilities.Constants
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+@{
+    var session = HttpContextAccessor.HttpContext.Session;
+    string jsoncart = session.GetString (SystemConstants.CartSession);
+    if (jsoncart != null) {
+        var cart = JsonConvert.DeserializeObject<List<CartItemViewModel>> (jsoncart);
+        <div class="nav-item"><a  asp-controller="Cart" asp-action="GetListItems">Giỏ hàng(@cart.Count)</a></div>
+         
+    }
+}

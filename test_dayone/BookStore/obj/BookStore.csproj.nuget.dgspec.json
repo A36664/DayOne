@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A36664\\OneDrive\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj": {}
+    "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A36664\\OneDrive\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj": {
+    "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A36664\\OneDrive\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
+        "projectUniqueName": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
         "projectName": "BookStore",
-        "projectPath": "C:\\Users\\A36664\\OneDrive\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
+        "projectPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
         "packagesPath": "C:\\Users\\A36664\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A36664\\OneDrive\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\obj\\",
+        "outputPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A36664\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,6 +2,7 @@
 using BookStore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,7 @@ namespace BookStore
             });
 
             //add Di
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IBookService,BookService>();
             services.AddTransient<ICustomerService,CustomerService>();
             services.AddTransient<IOrderService, OrderService>();
