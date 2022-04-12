@@ -42,21 +42,21 @@ namespace chessGame
                 Captured.Add(pieceCaptured);
             }
 
-            // #Small castling
-            if (piece is King && destination.Y == origin.Y + 2)
+            // # castling right
+            if (piece is King && destination.X == origin.X + 2)
             {
-                Position RookOriginPosition = new Position(origin.X, origin.Y + 3);
-                Position RookDestinationPosition = new Position(origin.X, origin.Y + 1);
+                Position RookOriginPosition = new Position(origin.Y, origin.X + 3);
+                Position RookDestinationPosition = new Position(origin.Y, origin.X + 1);
                 ChessPiece rook = Board.GetPiece(RookOriginPosition);
                 rook.AddMovements();
                 Board.SetPiece(rook, RookDestinationPosition);
             }
 
-            // #Big castling
-            if (piece is King && destination.Y == origin.Y - 2)
+            // # castling left
+            if (piece is King && destination.X == origin.X - 2)
             {
-                Position RookOriginPosition = new Position(origin.X, origin.Y - 4);
-                Position RookDestinationPosition = new Position(origin.X, origin.Y - 1);
+                Position RookOriginPosition = new Position(origin.Y, origin.X - 4);
+                Position RookDestinationPosition = new Position(origin.Y, origin.X - 1);
                 ChessPiece rook = Board.GetPiece(RookOriginPosition);
                 rook.AddMovements();
                 Board.SetPiece(rook, RookDestinationPosition);
@@ -65,16 +65,16 @@ namespace chessGame
             // #En passant
             if (piece is Pawn)
             {
-                if (origin.Y != destination.Y && pieceCaptured == null)
+                if (origin.X != destination.X && pieceCaptured == null)
                 {
                     Position pawnPosition;
                     if (piece.Colour == Colour.white)
                     {
-                        pawnPosition = new Position(destination.X + 1, destination.Y);
+                        pawnPosition = new Position(destination.Y + 1, destination.X);
                     }
                     else
                     {
-                        pawnPosition = new Position(destination.X - 1, destination.Y);
+                        pawnPosition = new Position(destination.Y - 1, destination.X);
                     }
                     pieceCaptured = Board.GetPiece(pawnPosition);
                     Captured.Add(pieceCaptured);
@@ -96,20 +96,20 @@ namespace chessGame
             Board.SetPiece(piece, origin);
 
             // #Small castling
-            if (piece is King && destination.Y == origin.Y + 2)
+            if (piece is King && destination.X == origin.X + 2)
             {
-                Position RookOriginPosition = new Position(origin.X, origin.Y + 3);
-                Position RookDestinationPosition = new Position(origin.X, origin.Y + 1);
+                Position RookOriginPosition = new Position(origin.Y, origin.X + 3);
+                Position RookDestinationPosition = new Position(origin.Y, origin.X + 1);
                 ChessPiece rook = Board.GetPiece(RookDestinationPosition);
                 rook.UnAddMovements();
                 Board.SetPiece(rook, RookOriginPosition);
             }
 
             // #Big castling
-            if (piece is King && destination.Y == origin.Y - 2)
+            if (piece is King && destination.X == origin.X - 2)
             {
-                Position RookOriginPosition = new Position(origin.X, origin.Y - 4);
-                Position RookDestinationPosition = new Position(origin.X, origin.Y - 1);
+                Position RookOriginPosition = new Position(origin.Y, origin.X - 4);
+                Position RookDestinationPosition = new Position(origin.Y, origin.X - 1);
                 ChessPiece rook = Board.GetPiece(RookDestinationPosition);
                 rook.UnAddMovements();
                 Board.SetPiece(rook, RookOriginPosition);
@@ -118,17 +118,17 @@ namespace chessGame
             // #En passant
             if (piece is Pawn)
             {
-                if (origin.Y != destination.Y && pieceCaptured == EnPassant)
+                if (origin.X != destination.X && pieceCaptured == EnPassant)
                 {
                     ChessPiece pawn = Board.GetPiece(destination);
                     Position pawnPosition;
                     if (piece.Colour == Colour.white)
                     {
-                        pawnPosition = new Position(3, destination.Y);
+                        pawnPosition = new Position(3, destination.X);
                     }
                     else
                     {
-                        pawnPosition = new Position(4, destination.Y);
+                        pawnPosition = new Position(4, destination.X);
                     }
                     Board.SetPiece(pawn, pawnPosition);
                 }
@@ -150,7 +150,7 @@ namespace chessGame
 
             if (piece is Pawn)
             {
-                if ((piece.Colour == Colour.white && destination.X == 0) || (piece.Colour == Colour.black && destination.X == 7))
+                if ((piece.Colour == Colour.white && destination.Y == 0) || (piece.Colour == Colour.black && destination.Y == 7))
                 {
                     piece = Board.GetPiece(destination);
                     Pieces.Remove(piece);
@@ -180,7 +180,7 @@ namespace chessGame
             }
 
             // #En passant
-            if (piece is Pawn && destination.X == origin.X - 2 || destination.X == origin.X + 2)
+            if (piece is Pawn && destination.Y == origin.Y - 2 || destination.Y == origin.Y + 2)
             {
                 EnPassant = piece;
             }
@@ -289,7 +289,7 @@ namespace chessGame
             foreach (ChessPiece piece in PiecesInGame(Opponent(colour)))
             {
                 bool[,] vs = piece.checkMove();
-                if (vs[K.PiecePosition.X, K.PiecePosition.Y])
+                if (vs[K.PiecePosition.Y, K.PiecePosition.X])
                 {
                     return true;
                 }

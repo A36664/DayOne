@@ -38,109 +38,109 @@ namespace chessGame
         {
 
             // sang trái
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
-                {
-                    break;
-                }
-                position.X -= 1;
-            }
-            // sang phải
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y);
-            while (Board.IfValidPosition(position) && CanMove(position))
-            {
-                boolboard[position.X, position.Y] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
-                {
-                    break;
-                }
-                position.X += 1;
-            }
-        }
-
-        public void VerticalMove(ref bool[,] boolboard, ref Position position)
-        {
-            // lên trên
-            position.DefineValues(PiecePosition.X, PiecePosition.Y + 1);
-            while (Board.IfValidPosition(position) && CanMove(position))
-            {
-                boolboard[position.X, position.Y] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
-                {
-                    break;
-                }
-                position.Y += 1;
-            }
-
-
-            // xuống dưới
-            position.DefineValues(PiecePosition.X, PiecePosition.Y - 1);
-            while (Board.IfValidPosition(position) && CanMove(position))
-            {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
                 position.Y -= 1;
             }
+            // sang phải
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X);
+            while (Board.IfValidPosition(position) && CanMove(position))
+            {
+                boolboard[position.Y, position.X] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
+                {
+                    break;
+                }
+                position.Y += 1;
+            }
+        }
+
+        public void VerticalMove(ref bool[,] boolboard, ref Position position)
+        {
+            // lên trên
+            position.DefineValues(PiecePosition.Y, PiecePosition.X + 1);
+            while (Board.IfValidPosition(position) && CanMove(position))
+            {
+                boolboard[position.Y, position.X] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
+                {
+                    break;
+                }
+                position.X += 1;
+            }
+
+
+            // xuống dưới
+            position.DefineValues(PiecePosition.Y, PiecePosition.X - 1);
+            while (Board.IfValidPosition(position) && CanMove(position))
+            {
+                boolboard[position.Y, position.X] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
+                {
+                    break;
+                }
+                position.X -= 1;
+            }
         }
 
         public void CrossUpRightAndDownLeft(ref bool[,] boolboard, ref Position position)
         {
             // chéo trên phải
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X + 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X + 1, position.Y + 1);
+                position.DefineValues(position.Y + 1, position.X + 1);
             }
 
 
             // chéo dưới trái
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X - 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X - 1, position.Y - 1);
+                position.DefineValues(position.Y - 1, position.X - 1);
             }
         }
 
         public void CrossUpLeftAndDownRight(ref bool[,] boolboard, ref Position position)
         {
             // chéo trên trái
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X + 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X - 1, position.Y + 1);
+                position.DefineValues(position.Y - 1, position.X + 1);
             }
 
             // chéo dưới phải
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X - 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X + 1, position.Y - 1);
+                position.DefineValues(position.Y + 1, position.X - 1);
             }
         }
     }

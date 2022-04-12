@@ -35,52 +35,52 @@ namespace chessGame
         public void CrossUpRightAndDownLeft(ref bool[,] boolboard, ref Position position)
         {
             
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X - 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X - 1, position.Y - 1);
+                position.DefineValues(position.Y - 1, position.X - 1);
             }
 
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X + 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X + 1, position.Y + 1);
+                position.DefineValues(position.Y + 1, position.X + 1);
             }
         }
 
         public void CrossUpLeftAndDownRight(ref bool[,] boolboard, ref Position position)
         {
 
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X - 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X + 1, position.Y - 1);
+                position.DefineValues(position.Y + 1, position.X - 1);
             }
 
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X + 1);
             while (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Colour != Colour)
                 {
                     break;
                 }
-                position.DefineValues(position.X - 1, position.Y + 1);
+                position.DefineValues(position.Y - 1, position.X + 1);
             }
         }
     }

@@ -40,31 +40,28 @@ namespace chessGame
             CrossUpLeftAndDownRight(ref boolboard, ref position);
             CrossUpRightAndDownLeft(ref boolboard, ref position);
 
-            // Special play Castling
             if (MovementsQuantity == 0 && !ChessTurns.Xeque)
             {
-                // #Small castling
-                Position rookSmallCastling = new Position(PiecePosition.X, PiecePosition.Y + 3);
+                Position rookSmallCastling = new Position(PiecePosition.Y, PiecePosition.X + 3);
                 if (RookTestForCastling(rookSmallCastling))
                 {
-                    Position kingPosition1 = new Position(PiecePosition.X, PiecePosition.Y + 1);
-                    Position kingPosition2 = new Position(PiecePosition.X, PiecePosition.Y + 2);
+                    Position kingPosition1 = new Position(PiecePosition.Y, PiecePosition.X + 1);
+                    Position kingPosition2 = new Position(PiecePosition.Y, PiecePosition.X + 2);
                     if (Board.Piece(kingPosition1) == null && Board.Piece(kingPosition2) == null)
                     {
-                        boolboard[PiecePosition.X, PiecePosition.Y + 2] = true;
+                        boolboard[PiecePosition.Y, PiecePosition.X + 2] = true;
                     }
                 }
 
-                // #Big castling
-                Position rookBigCastling = new Position(PiecePosition.X, PiecePosition.Y - 4);
+                Position rookBigCastling = new Position(PiecePosition.Y, PiecePosition.X - 4);
                 if (RookTestForCastling(rookBigCastling))
                 {
-                    Position kingPosition1 = new Position(PiecePosition.X, PiecePosition.Y - 1);
-                    Position kingPosition2 = new Position(PiecePosition.X, PiecePosition.Y - 2);
-                    Position kingPosition3 = new Position(PiecePosition.X, PiecePosition.Y - 3);
+                    Position kingPosition1 = new Position(PiecePosition.Y, PiecePosition.X - 1);
+                    Position kingPosition2 = new Position(PiecePosition.Y, PiecePosition.X - 2);
+                    Position kingPosition3 = new Position(PiecePosition.Y, PiecePosition.X - 3);
                     if (Board.Piece(kingPosition1) == null && Board.Piece(kingPosition2) == null && Board.Piece(kingPosition3) == null)
                     {
-                        boolboard[PiecePosition.X, PiecePosition.Y - 2] = true;
+                        boolboard[PiecePosition.Y, PiecePosition.X - 2] = true;
                     }
                 }
             }
@@ -75,68 +72,68 @@ namespace chessGame
         public void HorizontalMove(ref bool[,] boolboard, ref Position position)
         {
             // sang trái
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
             // sang phải
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
         }
 
         public void VerticalMove(ref bool[,] boolboard, ref Position position)
         {
             // lên trên
-            position.DefineValues(PiecePosition.X, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y, PiecePosition.X + 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
             // đi xuống
-            position.DefineValues(PiecePosition.X, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y, PiecePosition.X - 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
         }
 
         public void CrossUpRightAndDownLeft(ref bool[,] boolboard, ref Position position)
         {
             // chéo trên phải
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X + 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
             // chéo dưới trái
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X - 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
         }
 
         public void CrossUpLeftAndDownRight(ref bool[,] boolboard, ref Position position)
         {
             // chéo trên trái
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X + 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
             // chéo dưới phải
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X - 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
         }
     }

@@ -37,3 +37,17 @@ C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.cspr
 C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.dll
 C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.pdb
 C:\Users\A36664\Desktop\CMC\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.genruntimeconfig.cache
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.exe
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.deps.json
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.runtimeconfig.json
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.runtimeconfig.dev.json
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\bin\Debug\netcoreapp3.1\Chess.pdb
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.csproj.AssemblyReference.cache
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.AssemblyInfoInputs.cache
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.AssemblyInfo.cs
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.csproj.CoreCompileInputs.cache
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.pdb
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\Chess-Game\obj\Debug\netcoreapp3.1\Chess.genruntimeconfig.cache

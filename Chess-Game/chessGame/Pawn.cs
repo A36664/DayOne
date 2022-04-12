@@ -37,84 +37,84 @@ namespace chessGame
             if (Colour == Colour.white)
             {
                 // 
-                position.DefineValues(PiecePosition.X - 1, PiecePosition.Y);
+                position.DefineValues(PiecePosition.Y - 1, PiecePosition.X);
                 if (Board.IfValidPosition(position) && IsFree(position)){
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
 
-                position.DefineValues(PiecePosition.X - 2, PiecePosition.Y);
-                Position position1 = new Position(PiecePosition.X - 1, PiecePosition.Y);
+                position.DefineValues(PiecePosition.Y - 2, PiecePosition.X);
+                Position position1 = new Position(PiecePosition.Y - 1, PiecePosition.X);
                 if (Board.IfValidPosition(position1) && IsFree(position1) && Board.IfValidPosition(position) && IsFree(position) && MovementsQuantity == 0)
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
 
               
-                position.DefineValues(PiecePosition.X - 1, PiecePosition.Y - 1);
+                position.DefineValues(PiecePosition.Y - 1, PiecePosition.X - 1);
                 if (Board.IfValidPosition(position) && SpotEnemy(position))
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
               
-                position.DefineValues(PiecePosition.X - 1, PiecePosition.Y + 1);
+                position.DefineValues(PiecePosition.Y - 1, PiecePosition.X + 1);
                 if (Board.IfValidPosition(position) && SpotEnemy(position))
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
                 // check end
-                if (PiecePosition.X == 3)
+                if (PiecePosition.Y == 3)
                 {
-                    Position left = new Position(PiecePosition.X, PiecePosition.Y - 1);
+                    Position left = new Position(PiecePosition.Y, PiecePosition.X - 1);
                     if (Board.IfValidPosition(left) && SpotEnemy(left) && Board.Piece(left) == ChessTurns.EnPassant)
                     {
-                        boolboard[left.X - 1, left.Y] = true;
+                        boolboard[left.Y - 1, left.X] = true;
                     }
-                    Position right = new Position(PiecePosition.X, PiecePosition.Y + 1);
+                    Position right = new Position(PiecePosition.Y, PiecePosition.X + 1);
                     if (Board.IfValidPosition(right) && SpotEnemy(right) && Board.Piece(right) == ChessTurns.EnPassant)
                     {
-                        boolboard[right.X - 1, right.Y] = true;
+                        boolboard[right.Y - 1, right.X] = true;
                     }
                 }
             }
             else
             {
-                position.DefineValues(PiecePosition.X + 1, PiecePosition.Y);
+                position.DefineValues(PiecePosition.Y + 1, PiecePosition.X);
                 if (Board.IfValidPosition(position) && IsFree(position))
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
 
-                position.DefineValues(PiecePosition.X + 2, PiecePosition.Y);
-                Position position1 = new Position(PiecePosition.X + 1, PiecePosition.Y);
+                position.DefineValues(PiecePosition.Y + 2, PiecePosition.X);
+                Position position1 = new Position(PiecePosition.Y + 1, PiecePosition.X);
                 if (Board.IfValidPosition(position1) && IsFree(position1) && Board.IfValidPosition(position) && IsFree(position) && MovementsQuantity == 0)
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
 
-                position.DefineValues(PiecePosition.X + 1, PiecePosition.Y + 1);
+                position.DefineValues(PiecePosition.Y + 1, PiecePosition.X + 1);
                 if (Board.IfValidPosition(position) && SpotEnemy(position))
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
 
-                position.DefineValues(PiecePosition.X + 1, PiecePosition.Y - 1);
+                position.DefineValues(PiecePosition.Y + 1, PiecePosition.X - 1);
                 if (Board.IfValidPosition(position) && SpotEnemy(position))
                 {
-                    boolboard[position.X, position.Y] = true;
+                    boolboard[position.Y, position.X] = true;
                 }
 
                 // check end
-                if (PiecePosition.X == 4)
+                if (PiecePosition.Y == 4)
                 {
-                    Position left = new Position(PiecePosition.X, PiecePosition.Y - 1);
+                    Position left = new Position(PiecePosition.Y, PiecePosition.X - 1);
                     if (Board.IfValidPosition(left) && SpotEnemy(left) && Board.Piece(left) == ChessTurns.EnPassant)
                     {
-                        boolboard[left.X + 1, left.Y] = true;
+                        boolboard[left.Y + 1, left.X] = true;
                     }
-                    Position right = new Position(PiecePosition.X, PiecePosition.Y + 1);
+                    Position right = new Position(PiecePosition.Y, PiecePosition.X + 1);
                     if (Board.IfValidPosition(right) && SpotEnemy(right) && Board.Piece(right) == ChessTurns.EnPassant)
                     {
-                        boolboard[right.X + 1, right.Y] = true;
+                        boolboard[right.Y + 1, right.X] = true;
                     }
                 }
             }

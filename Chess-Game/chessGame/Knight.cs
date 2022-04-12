@@ -24,52 +24,52 @@ namespace chessGame
 
             Position position = new Position(0, 0);
 
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y - 2);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X - 2);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X - 2, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y - 2, PiecePosition.X - 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X - 2, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y - 2, PiecePosition.X + 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X - 1, PiecePosition.Y + 2);
+            position.DefineValues(PiecePosition.Y - 1, PiecePosition.X + 2);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y + 2);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X + 2);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X + 2, PiecePosition.Y + 1);
+            position.DefineValues(PiecePosition.Y + 2, PiecePosition.X + 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X + 2, PiecePosition.Y - 1);
+            position.DefineValues(PiecePosition.Y + 2, PiecePosition.X - 1);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
-            position.DefineValues(PiecePosition.X + 1, PiecePosition.Y - 2);
+            position.DefineValues(PiecePosition.Y + 1, PiecePosition.X - 2);
             if (Board.IfValidPosition(position) && CanMove(position))
             {
-                boolboard[position.X, position.Y] = true;
+                boolboard[position.Y, position.X] = true;
             }
 
             return boolboard;

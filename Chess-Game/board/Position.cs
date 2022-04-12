@@ -2,26 +2,26 @@
 {
     class Position
     {
-        public int X { get; set; }
         public int Y { get; set; }
+        public int X { get; set; }
 
         public Position(int row, int column)
         {
-            X = row;
-            Y = column;
+            Y = row;
+            X = column;
         }
 
         public void DefineValues(int row, int column)
         {
-            X = row;
-            Y = column;
+            Y = row;
+            X = column;
         }
 
         public override string ToString()
         {
-            return X
+            return Y
                 + ", "
-                + Y;
+                + X;
         }
     }
 }

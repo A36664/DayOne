@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\A36664\\.nuget\\packages\\": {}
+    "C:\\Users\\nvluc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\Chess-Game\\Chess.csproj",
+      "projectUniqueName": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\Chess-Game\\Chess.csproj",
       "projectName": "Chess",
-      "projectPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\Chess-Game\\Chess.csproj",
-      "packagesPath": "C:\\Users\\A36664\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\Chess-Game\\obj\\",
+      "projectPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\Chess-Game\\Chess.csproj",
+      "packagesPath": "C:\\Users\\nvluc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\Chess-Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\A36664\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nvluc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,12 +55,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.23, 3.1.23]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

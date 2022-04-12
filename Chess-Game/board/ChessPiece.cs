@@ -46,7 +46,7 @@ namespace board
 
         public bool checkMoveTo(Position position)
         {
-            return checkMove()[position.X, position.Y];
+            return checkMove()[position.Y, position.X];
         }
 
         public abstract bool[,] checkMove();

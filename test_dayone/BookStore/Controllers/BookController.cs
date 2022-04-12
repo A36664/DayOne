@@ -18,7 +18,7 @@ namespace BookStore.Controllers
             return View();
         }
 
-      
+
         public async Task<IActionResult> GetBooksPaging()
         {
             var books = await _bookService.GetListBookByPaging(1, 10);
@@ -26,9 +26,9 @@ namespace BookStore.Controllers
             return View(books);
         }
         [HttpGet("Details")]
-        public  async Task<IActionResult> Details(int bookId)
+        public async Task<IActionResult> Details(int bookId)
         {
-            var book = await _bookService.GetBookById(bookId);  
+            var book = await _bookService.GetBookById(bookId);
             return View(book);
         }
         [HttpGet("EditView")]
@@ -50,10 +50,16 @@ namespace BookStore.Controllers
             return View(book);
         }
         [HttpPost("Delete")]
-        public async Task<IActionResult> Delete(int bookId)
+        public async Task<IActionResult> Delete(int Id)
         {
-            var book = await _bookService.Delete(bookId);
-            return Redirect("/"); ;
+
+            var book = await _bookService.Delete(Id);
+            if (book > 0)
+            {
+
+                return Redirect("/"); ;
+            }
+            return BadRequest();
         }
     }
 }

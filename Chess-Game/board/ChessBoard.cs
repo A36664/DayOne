@@ -22,7 +22,7 @@ namespace board
 
         public ChessPiece Piece(Position position)
         {
-            return pieces[position.X, position.Y];
+            return pieces[position.Y, position.X];
         }
 
         public bool IfThereIsAPiece(Position position)
@@ -37,7 +37,7 @@ namespace board
             {
                 throw new BoardException("The position is already occupied by a piece.");
             }
-            pieces[newPosition.X, newPosition.Y] = newPiece;
+            pieces[newPosition.Y, newPosition.X] = newPiece;
             newPiece.PiecePosition = newPosition;
         }
 
@@ -49,13 +49,13 @@ namespace board
             }
             ChessPiece newPiece = Piece(position);
             newPiece.PiecePosition = null;
-            pieces[position.X, position.Y] = null;
+            pieces[position.Y, position.X] = null;
             return newPiece;
         }
 
         public bool IfValidPosition(Position position)
         {
-            if(position.X < 0 || position.X >= Rows || position.Y < 0 || position.Y >= Columns)
+            if(position.Y < 0 || position.Y >= Rows || position.X < 0 || position.X >= Columns)
             {
                 return false;
             }

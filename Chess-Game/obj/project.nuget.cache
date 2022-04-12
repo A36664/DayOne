@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1ZfTnmlGeIizWoK4C2Fxb8sfkvJWfle1rE33oQjfvysvf36ih2t7g3tsTvdEmxFFCBn+bH9WLcBOVo8Yu0pbWw==",
+  "dgSpecHash": "ZYdqki4A0dI+cmZ/fiyACHeIcMoqeTPca9Q2RxdAC42BDxTf2aUQtXjtNdTk9qdr3teg/BO0oqiRYmUN5WUjtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\Chess-Game\\Chess.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\Chess-Game\\Chess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nvluc\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512",
+    "C:\\Users\\nvluc\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\nvluc\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\nvluc\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
