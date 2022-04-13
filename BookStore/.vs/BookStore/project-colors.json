@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ec7a6cc0-86f1-4225-a218-bb05742d1377": {
+      "ProjectGuid": "ec7a6cc0-86f1-4225-a218-bb05742d1377",
+      "DisplayName": "BookStore",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "fbce38d2-1b91-48bd-b67d-9ed33f015cdb": {
+      "ProjectGuid": "fbce38d2-1b91-48bd-b67d-9ed33f015cdb",
+      "DisplayName": "BookStore.Service",
+      "ColorIndex": 1
+    },
+    "dab03241-276d-4fb7-944b-367e6c253bc4": {
+      "ProjectGuid": "dab03241-276d-4fb7-944b-367e6c253bc4",
+      "DisplayName": "BookStore.Data",
+      "ColorIndex": 2
+    },
+    "112979dd-d4d0-469c-9320-15f415791a7b": {
+      "ProjectGuid": "112979dd-d4d0-469c-9320-15f415791a7b",
+      "DisplayName": "BookStore.Shared",
+      "ColorIndex": 3
+    },
+    "6814ec61-dd22-4c22-ab50-073eb0d4dd7d": {
+      "ProjectGuid": "6814ec61-dd22-4c22-ab50-073eb0d4dd7d",
+      "DisplayName": "BookStore.Model",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

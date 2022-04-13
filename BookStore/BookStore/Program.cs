@@ -1,4 +1,5 @@
-﻿using BookStore.Infrastructure;
+﻿using BookStore.Data.Repositories;
+using BookStore.Infrastructure;
 using BookStore.Repositories;
 using BookStore.Service.Services;
 using SimpleInjector;
@@ -39,9 +40,20 @@ namespace BookStore
             
             //Register your types, for instance:
             container.Register<IDbFactory,DbFactory>(Lifestyle.Singleton);
-            //container.Register<Disposable>(Lifestyle.Scoped);
+            container.Register<IUnitOfWork, UnitOfWork>();
+
+            // register repositories
             container.Register<ICustomerRepository, CustomerRepository>();
+            container.Register<IAuthorRepository, AuthorRepository>();
+            container.Register<ICategoryRepository, CategoryRepository>();
+            container.Register<IBookRepository, BookRepository>();
+
+            // register services
             container.Register<ICustomerService, CustomerService>();
+            container.Register<IBookService, BookService>();
+            container.Register<IAuthorService, AuthorService>();
+            container.Register<ICategoryService, CategoryService>();
+
 
             AutoRegisterWindowsForms(container);
 

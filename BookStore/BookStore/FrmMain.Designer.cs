@@ -61,6 +61,7 @@
             this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.toolStripMenuItem2.Size = new System.Drawing.Size(120, 50);
             this.toolStripMenuItem2.Text = "Customer";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.CustomerClickEventHandler);
@@ -72,6 +73,7 @@
             this.toolStripMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem4.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.toolStripMenuItem4.Size = new System.Drawing.Size(120, 50);
             this.toolStripMenuItem4.Text = "Books";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.BookClickEventHandler);
@@ -82,6 +84,7 @@
             this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
             this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.toolStripMenuItem3.Size = new System.Drawing.Size(120, 50);
             this.toolStripMenuItem3.Text = "Author";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.AuthorClickEventHandler);
@@ -92,6 +95,7 @@
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 50);
             this.toolStripMenuItem1.Text = "Category";
             // 

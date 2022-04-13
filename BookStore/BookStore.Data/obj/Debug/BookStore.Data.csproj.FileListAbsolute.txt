@@ -15,3 +15,23 @@ C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookSto
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Model.dll.config
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.Migrations.init.resources
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.csproj.GenerateResource.cache
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Data.dll.config
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Data.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Data.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Model.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\EntityFramework.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Model.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Model.dll.config
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\EntityFramework.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.csproj.AssemblyReference.cache
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.Migrations.init.resources
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.csproj.GenerateResource.cache
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.csproj.CoreCompileInputs.cache
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.csproj.CopyComplete
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Shared.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Shared.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.Migrations.removeBookInCategory.resources

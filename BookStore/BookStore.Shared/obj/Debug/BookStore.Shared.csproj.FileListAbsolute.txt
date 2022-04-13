@@ -1,0 +1,6 @@
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Shared\bin\Debug\BookStore.Shared.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Shared\bin\Debug\BookStore.Shared.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.csproj.AssemblyReference.cache
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.csproj.CoreCompileInputs.cache
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.pdb

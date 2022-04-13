@@ -1,4 +1,5 @@
 ﻿using BookStore.Model.Entities;
+using BookStore.Shared;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +11,7 @@ namespace BookStore.Data.EF
 {
     public class BookStoreContext : DbContext
     {
-        public BookStoreContext() : base("Server=.;Database=BookStoreDayOne;Trusted_Connection=True;")
+        public BookStoreContext() : base(Constants.ConnectionString)
         {
 
         }
@@ -19,7 +20,6 @@ namespace BookStore.Data.EF
 
         public DbSet<Book> Books { get; set; }
         
-        public DbSet<BookInCategory> BookInCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Input> Inputs { get; set; }

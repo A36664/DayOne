@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9a90ea4c-57c2-4764-a1e8-496eea61f5a7": {
+      "ProjectGuid": "9a90ea4c-57c2-4764-a1e8-496eea61f5a7",
+      "DisplayName": "BookStore",
+      "ColorIndex": 0
+    },
+    "69a06793-fd91-43d8-860e-94bc2864d2d6": {
+      "ProjectGuid": "69a06793-fd91-43d8-860e-94bc2864d2d6",
+      "DisplayName": "BookStore.Test",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookStore.Service.Services
 {
-    public interface ICustomerService
+    public interface ICustomerService:IBaseService<Customer>
     {
-        IEnumerable<Customer> GetAll();
+       
     }
 }

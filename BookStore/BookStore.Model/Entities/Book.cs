@@ -24,9 +24,13 @@ namespace BookStore.Model.Entities
         [Required]
         public decimal Price { set; get; }
 
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
       
         public int AuthorId { set; get; }
-        public Author Author { set; get; }
+        [ForeignKey("AuthorId")]
+        public virtual Author Author { set; get; }
 
        
     }

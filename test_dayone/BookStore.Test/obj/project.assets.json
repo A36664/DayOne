@@ -10684,19 +10684,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nvluc\\.nuget\\packages\\": {}
+    "C:\\Users\\A36664\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore.Test\\BookStore.Test.csproj",
+      "projectUniqueName": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore.Test\\BookStore.Test.csproj",
       "projectName": "BookStore.Test",
-      "projectPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore.Test\\BookStore.Test.csproj",
-      "packagesPath": "C:\\Users\\nvluc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore.Test\\obj\\",
+      "projectPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore.Test\\BookStore.Test.csproj",
+      "packagesPath": "C:\\Users\\A36664\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nvluc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\A36664\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10710,8 +10710,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore\\BookStore.csproj": {
-              "projectPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore\\BookStore.csproj"
+            "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj": {
+              "projectPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj"
             }
           }
         }
@@ -10770,7 +10770,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
