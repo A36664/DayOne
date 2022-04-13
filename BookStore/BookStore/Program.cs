@@ -1,4 +1,7 @@
-﻿using SimpleInjector;
+﻿using BookStore.Infrastructure;
+using BookStore.Repositories;
+using BookStore.Service.Services;
+using SimpleInjector;
 using SimpleInjector.Diagnostics;
 using System;
 using System.Collections.Generic;
@@ -18,16 +21,27 @@ namespace BookStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var container = Bootstrap();
+
+            Application.Run(container.GetInstance<FrmMain>());
         }
         private static Container Bootstrap()
         {
             // Create the container as usual.
             var container = new Container();
 
-            // Register your types, for instance:
-            //container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Singleton);
-            //container.Register<IUserContext, WinFormsUserContext>();
+            //Registration registration = container.GetRegistration(typeof(IService)).Registration;
+
+            //registration.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+            //    "Reason of suppression");
+
+            
+            //Register your types, for instance:
+            container.Register<IDbFactory,DbFactory>(Lifestyle.Singleton);
+            //container.Register<Disposable>(Lifestyle.Scoped);
+            container.Register<ICustomerRepository, CustomerRepository>();
+            container.Register<ICustomerService, CustomerService>();
 
             AutoRegisterWindowsForms(container);
 
