@@ -51,6 +51,11 @@ namespace BookStore.Service.Services
             return _bookRepository.GetAllBooks();
         }
 
+        public BookViewModel GetByAlias(string alias)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SaveChanges()
         {
             _unitOfWork.Commit();

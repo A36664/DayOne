@@ -40,9 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTim = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTimkh = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -157,9 +157,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnTim);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtTimkh);
+            this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Location = new System.Drawing.Point(569, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(217, 164);
@@ -167,14 +167,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm khách hàng";
             // 
-            // btnTim
+            // btnSearch
             // 
-            this.btnTim.Location = new System.Drawing.Point(94, 118);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 23);
-            this.btnTim.TabIndex = 4;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(63, 109);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label10
             // 
@@ -185,12 +186,12 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Tên khách hàng";
             // 
-            // txtTimkh
+            // txtSearch
             // 
-            this.txtTimkh.Location = new System.Drawing.Point(24, 68);
-            this.txtTimkh.Name = "txtTimkh";
-            this.txtTimkh.Size = new System.Drawing.Size(159, 20);
-            this.txtTimkh.TabIndex = 1;
+            this.txtSearch.Location = new System.Drawing.Point(24, 68);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(159, 20);
+            this.txtSearch.TabIndex = 1;
             // 
             // label9
             // 
@@ -243,9 +244,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTimkh;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
     }

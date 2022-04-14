@@ -48,7 +48,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem1});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip2.Location = new System.Drawing.Point(1122, 0);
+            this.menuStrip2.Location = new System.Drawing.Point(790, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip2.Size = new System.Drawing.Size(126, 660);
@@ -98,23 +98,25 @@
             this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 50);
             this.toolStripMenuItem1.Text = "Category";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.CategoryClickEnvenHandler);
             // 
             // panelMain
             // 
             this.panelMain.Location = new System.Drawing.Point(13, 13);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1106, 635);
+            this.panelMain.Size = new System.Drawing.Size(753, 635);
             this.panelMain.TabIndex = 3;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 660);
+            this.ClientSize = new System.Drawing.Size(916, 660);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip2);
             this.Name = "FrmMain";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);

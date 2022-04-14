@@ -45,10 +45,26 @@ namespace BookStore
 
         private void AuthorClickEventHandler(object sender, EventArgs e)
         {
-            AuthorUC authorUC = new AuthorUC();
+            AuthorUC authorUC = new AuthorUC(_authorService);
             authorUC.Dock= DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(authorUC);
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            BookUC bookUC = new BookUC(_bookService, _categoryService, _authorService);
+            bookUC.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(bookUC);
+        }
+
+        private void CategoryClickEnvenHandler(object sender, EventArgs e)
+        {
+            CategoryUC categoryUC = new CategoryUC(_categoryService);
+            categoryUC.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(categoryUC);
         }
     }
 }

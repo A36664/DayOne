@@ -42,6 +42,11 @@ namespace BookStore.Service.Services
             return _authorRepository.GetAll();
         }
 
+        public Author GetByAlias(string alias)
+        {
+            return _authorRepository.GetSingleByCondition(x=>x.Name == alias);
+        }
+
         public void SaveChanges()
         {
             _unitOfWork.Commit();

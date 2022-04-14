@@ -30,6 +30,8 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtOriginPrice = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.txtTimSach = new System.Windows.Forms.TextBox();
             this.dgdBook = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtOriginPrice = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdBook)).BeginInit();
@@ -87,6 +87,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 323);
             this.panel1.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Giá gốc";
+            // 
+            // txtOriginPrice
+            // 
+            this.txtOriginPrice.Location = new System.Drawing.Point(87, 258);
+            this.txtOriginPrice.Name = "txtOriginPrice";
+            this.txtOriginPrice.Size = new System.Drawing.Size(159, 20);
+            this.txtOriginPrice.TabIndex = 51;
             // 
             // btnAdd
             // 
@@ -159,6 +175,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(87, 36);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(159, 20);
             this.txtId.TabIndex = 41;
             // 
@@ -242,6 +259,7 @@
             this.dgdBook.Name = "dgdBook";
             this.dgdBook.Size = new System.Drawing.Size(715, 239);
             this.dgdBook.TabIndex = 44;
+            this.dgdBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgdBook_CellContentClick);
             // 
             // label9
             // 
@@ -252,22 +270,6 @@
             this.label9.Size = new System.Drawing.Size(68, 15);
             this.label9.TabIndex = 45;
             this.label9.Text = "Danh sách ";
-            // 
-            // txtOriginPrice
-            // 
-            this.txtOriginPrice.Location = new System.Drawing.Point(87, 258);
-            this.txtOriginPrice.Name = "txtOriginPrice";
-            this.txtOriginPrice.Size = new System.Drawing.Size(159, 20);
-            this.txtOriginPrice.TabIndex = 51;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 258);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Giá gốc";
             // 
             // BookUC
             // 

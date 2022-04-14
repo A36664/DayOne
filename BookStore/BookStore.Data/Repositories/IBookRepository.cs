@@ -12,7 +12,8 @@ namespace BookStore.Data.Repositories
     public interface IBookRepository : IRepository<Book>
     {
         List<BookViewModel> GetAllBooks();
+     
 
-       
+
     }
 }

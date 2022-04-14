@@ -273,6 +273,12 @@
     <Compile Include="UserControlls\BookUC.Designer.cs">
       <DependentUpon>BookUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlls\CategoryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\CategoryUC.Designer.cs">
+      <DependentUpon>CategoryUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlls\CustomerUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\BookUC.resx">
       <DependentUpon>BookUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\CategoryUC.resx">
+      <DependentUpon>CategoryUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\CustomerUC.resx">
       <DependentUpon>CustomerUC.cs</DependentUpon>
@@ -326,6 +335,10 @@
     <ProjectReference Include="..\BookStore.Service\BookStore.Service.csproj">
       <Project>{fbce38d2-1b91-48bd-b67d-9ed33f015cdb}</Project>
       <Name>BookStore.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookStore.Shared\BookStore.Shared.csproj">
+      <Project>{112979dd-d4d0-469c-9320-15f415791a7b}</Project>
+      <Name>BookStore.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

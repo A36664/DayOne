@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControlls
 {
@@ -28,15 +29,23 @@ namespace BookStore.UserControlls
         {
             LoadData();
         }
-        public void LoadData()
+        private void LoadData(string search=null)
         {
-            List<Customer> customers = _customerService.GetAll().ToList();
 
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Mã khách hàng", typeof(int));
-            dataTable.Columns.Add("Tên khách hàng", typeof(string));
-            dataTable.Columns.Add("Số điện thoại", typeof(string));
-            dataTable.Columns.Add("Email", typeof(string));
+            dataTable.Columns.Add(CustomerFields.CustomerId, typeof(int));
+            dataTable.Columns.Add(CustomerFields.CustomerName, typeof(string));
+            dataTable.Columns.Add(CustomerFields.PhoneNumber, typeof(string));
+            dataTable.Columns.Add(CustomerFields.Email, typeof(string));
+            List<Customer> customers = new List<Customer>();
+            if(search != null)
+            {
+                customers.Add(_customerService.GetByAlias(search));
+            }
+            else
+            {
+                customers= _customerService.GetAll().ToList();
+            }
            
             foreach (Customer customer in customers)
             {
@@ -81,7 +90,7 @@ namespace BookStore.UserControlls
                 return;
             }
 
-            if(MessageBox.Show("Thêm sách","Chú ý",MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+            if(MessageBox.Show("Thêm khách hàng","Chú ý",MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 try
                 {
@@ -102,6 +111,18 @@ namespace BookStore.UserControlls
             }
            
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.IsNullOrWhiteSpace())
+            {
+                MessageBox.Show("Vui lòng nhập giá trị tìm", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSearch.Focus();
+                return;
+            }
+
+            LoadData(txtSearch.Text);
         }
     }
 }

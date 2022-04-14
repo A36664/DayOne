@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControlls
 {
@@ -42,17 +43,17 @@ namespace BookStore.UserControlls
             LoadAuthors();
         }
 
-        public void LoadData()
+        private void LoadData()
         {
             List<BookViewModel> books = _bookService.GetAllBooks();
 
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Mã sản phẩm", typeof(int));
-            dataTable.Columns.Add("Tên sản phẩm", typeof(string));
-            dataTable.Columns.Add("Số lượng sản phẩm", typeof(string));
-            dataTable.Columns.Add("Giá bán", typeof(string));
-            dataTable.Columns.Add("Tên tác giả", typeof(string));
-            dataTable.Columns.Add("Loại", typeof(string));
+            dataTable.Columns.Add(BookFields.BookId, typeof(int));
+            dataTable.Columns.Add(BookFields.Name, typeof(string));
+            dataTable.Columns.Add(BookFields.Stock, typeof(string));
+            dataTable.Columns.Add(BookFields.Price, typeof(string));
+            dataTable.Columns.Add(BookFields.AuthorName, typeof(string));
+            dataTable.Columns.Add(BookFields.CategoryName, typeof(string));
 
             foreach (BookViewModel book in books)
             {
@@ -64,13 +65,13 @@ namespace BookStore.UserControlls
             dgdBook.DataSource = dataTable;
         }
 
-        public void LoadCategories()
+        private void LoadCategories()
         {
             var categories = _categoryService.GetAll().ToList();
             cbxCategory.DisplayMember = "Name";
             cbxCategory.DataSource = categories;
         }
-        public void LoadAuthors()
+        private void LoadAuthors()
         {
             var authors = _authorService.GetAll().ToList();
             cbxAuthor.DisplayMember = "Name";
@@ -149,6 +150,22 @@ namespace BookStore.UserControlls
                 {
                     MessageBox.Show("Lỗi ngoại lệ: " + ex.Message.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void dgdBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexOfContent = e.RowIndex;
+            DataGridViewRow dataGridViewRow = dgdBook.Rows[indexOfContent];
+            if (dataGridViewRow != null)
+            {
+                txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
+                txtStock.Text = dataGridViewRow.Cells[2].Value.ToString();
+                txtPrice.Text = dataGridViewRow.Cells[3].Value.ToString();
+               
+                cbxAuthor.Text = dataGridViewRow.Cells[4].Value.ToString();
+                cbxCategory.Text = dataGridViewRow.Cells[5].Value.ToString();
+
             }
         }
     }

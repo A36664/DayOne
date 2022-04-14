@@ -11,5 +11,6 @@ namespace BookStore.Service.Services
     public interface IBookService:IBaseService<Book>
     {
         List<BookViewModel> GetAllBooks();
+        BookViewModel GetByAlias(string alias);
     }
 }

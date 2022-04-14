@@ -35,3 +35,7 @@ C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Shared.dll
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Shared.pdb
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.Migrations.removeBookInCategory.resources
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Shared.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\bin\Debug\BookStore.Shared.pdb
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.Migrations.removeBookInCategory.resources
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Data\obj\Debug\BookStore.Data.Migrations.AddPhoneAndEmailForAuthor.resources

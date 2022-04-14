@@ -21,3 +21,4 @@ C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.csproj.CopyComplete
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.dll
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.pdb
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.csproj.AssemblyReference.cache
