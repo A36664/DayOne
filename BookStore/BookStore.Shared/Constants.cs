@@ -9,6 +9,7 @@ namespace BookStore.Shared
     public static class Constants
     {
         public const string ConnectionString = "Server=.;Database=BookStoreDayOne;Trusted_Connection=True;";
+        public static string EncryptionKey = "fkasfdshfjkwjfknbsajkfjka";
         public struct BookFields
         {
             public static string BookId="Mã sách";

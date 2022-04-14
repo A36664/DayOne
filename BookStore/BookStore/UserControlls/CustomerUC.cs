@@ -1,6 +1,6 @@
 ﻿using BookStore.Model.Entities;
 using BookStore.Service.Services;
-using Microsoft.VisualStudio.Utilities.Internal;
+using BookStore.Shared.Heplers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +50,7 @@ namespace BookStore.UserControlls
             foreach (Customer customer in customers)
             {
                 
-                dataTable.Rows.Add(customer.Id, customer.Name, customer.PhoneNumber,customer.Email);
+                dataTable.Rows.Add(customer.Id, customer.Name.Decrypt(EncryptionKey), customer.PhoneNumber.Decrypt(EncryptionKey), customer.Email.Decrypt(EncryptionKey));
                 
             }
             
@@ -96,9 +96,9 @@ namespace BookStore.UserControlls
                 {
                     var customer = new Customer()
                     {
-                        Email = txtEmail.Text,
-                        Name = txtName.Text,
-                        PhoneNumber = txtPhone.Text
+                        Email = txtEmail.Text.Encrypt(EncryptionKey),
+                        Name = txtName.Text.Encrypt(EncryptionKey),
+                        PhoneNumber = txtPhone.Text.Encrypt(EncryptionKey)
                     };
                     _customerService.Add(customer);
                     _customerService.SaveChanges();
