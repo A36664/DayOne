@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Service;
 
 namespace BookStore
 {
@@ -53,7 +54,7 @@ namespace BookStore
             container.Register<IBookService, BookService>();
             container.Register<IAuthorService, AuthorService>();
             container.Register<ICategoryService, CategoryService>();
-
+            container.Register<IMainHandler,MainHandler>();
 
             AutoRegisterWindowsForms(container);
 

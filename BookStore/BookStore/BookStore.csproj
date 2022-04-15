@@ -267,11 +267,11 @@
     <Compile Include="UserControlls\AuthorUC.Designer.cs">
       <DependentUpon>AuthorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlls\BookUC.cs">
+    <Compile Include="UserControlls\BookUc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlls\BookUC.Designer.cs">
-      <DependentUpon>BookUC.cs</DependentUpon>
+    <Compile Include="UserControlls\BookUc.Designer.cs">
+      <DependentUpon>BookUc.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlls\CategoryUC.cs">
       <SubType>UserControl</SubType>
@@ -284,6 +284,12 @@
     </Compile>
     <Compile Include="UserControlls\CustomerUC.Designer.cs">
       <DependentUpon>CustomerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\MenuHelperUc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\MenuHelperUc.Designer.cs">
+      <DependentUpon>MenuHelperUc.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -300,14 +306,17 @@
     <EmbeddedResource Include="UserControlls\AuthorUC.resx">
       <DependentUpon>AuthorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlls\BookUC.resx">
-      <DependentUpon>BookUC.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlls\BookUc.resx">
+      <DependentUpon>BookUc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\CategoryUC.resx">
       <DependentUpon>CategoryUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\CustomerUC.resx">
       <DependentUpon>CustomerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\MenuHelperUc.resx">
+      <DependentUpon>MenuHelperUc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

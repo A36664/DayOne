@@ -102,9 +102,9 @@
             // 
             // panelMain
             // 
-            this.panelMain.Location = new System.Drawing.Point(13, 13);
+            this.panelMain.Location = new System.Drawing.Point(13, 70);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(753, 635);
+            this.panelMain.Size = new System.Drawing.Size(753, 578);
             this.panelMain.TabIndex = 3;
             // 
             // FrmMain

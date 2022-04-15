@@ -365,3 +365,4 @@ C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore\obj\Debug\BookStore.cspro
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore\bin\Debug\BookStore.Shared.dll
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore\bin\Debug\BookStore.Shared.pdb
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore\obj\Debug\BookStore.UserControlls.CategoryUC.resources
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore\obj\Debug\BookStore.UserControlls.MenuHelperUc.resources

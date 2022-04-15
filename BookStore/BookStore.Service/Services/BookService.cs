@@ -15,8 +15,8 @@ namespace BookStore.Service.Services
     {
 
 
-        private IBookRepository _bookRepository;
-        IUnitOfWork _unitOfWork;
+        private readonly IBookRepository _bookRepository;
+        readonly IUnitOfWork _unitOfWork;
         public BookService(IBookRepository bookRepository,IUnitOfWork unitOfWork)
         {
             _bookRepository = bookRepository;

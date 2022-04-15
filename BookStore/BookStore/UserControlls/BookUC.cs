@@ -11,28 +11,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Service;
 using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControlls
 {
-    public partial class BookUC : UserControl
+    public partial class BookUc : UserControl
     {
-        private readonly IBookService _bookService;
-        private readonly ICategoryService _categoryService;
-        private readonly IAuthorService _authorService;
 
-        private Category _selectCategor;
+        private Category _selectCategory;
 
-        public Category SelectCategor { get => _selectCategor; set => _selectCategor = value; }
-        public Author SelectAuthor { get => _selectAuthor; set => _selectAuthor = value; }
 
         private Author _selectAuthor;
+        private  readonly  IMainHandler _mainHandler;
 
-        public BookUC(IBookService bookService,ICategoryService categoryService,IAuthorService authorService)
+        public BookUc(IMainHandler mainHandler)
         {
-            _bookService = bookService;
-            _categoryService = categoryService;
-            _authorService = authorService; 
+            _mainHandler= mainHandler;
             InitializeComponent();
         }
 
@@ -45,7 +40,7 @@ namespace BookStore.UserControlls
 
         private void LoadData()
         {
-            List<BookViewModel> books = _bookService.GetAllBooks();
+            var books = _mainHandler.Handle(null, StatusTypes.Book, ActionTypes.GetAllBooks) as IEnumerable<BookViewModel>;
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add(BookFields.BookId, typeof(int));
@@ -55,27 +50,26 @@ namespace BookStore.UserControlls
             dataTable.Columns.Add(BookFields.AuthorName, typeof(string));
             dataTable.Columns.Add(BookFields.CategoryName, typeof(string));
 
-            foreach (BookViewModel book in books)
-            {
-
-                dataTable.Rows.Add(book.Id, book.Name, book.Stock, book.Price,book.AuthorName,book.CategoryName);
-
-            }
+            if (books != null)
+                foreach (BookViewModel book in books.ToList())
+                {
+                    dataTable.Rows.Add(book.Id, book.Name, book.Stock, book.Price, book.AuthorName, book.CategoryName);
+                }
 
             dgdBook.DataSource = dataTable;
         }
 
         private void LoadCategories()
         {
-            var categories = _categoryService.GetAll().ToList();
+            var categories =  _mainHandler.Handle(null, StatusTypes.Category, ActionTypes.GetAll) as IEnumerable<Category>;
             cbxCategory.DisplayMember = "Name";
-            cbxCategory.DataSource = categories;
+            if (categories != null) cbxCategory.DataSource = categories.ToList();
         }
         private void LoadAuthors()
         {
-            var authors = _authorService.GetAll().ToList();
+            var authors = _mainHandler.Handle(null, StatusTypes.Author, ActionTypes.GetAll) as IEnumerable<Author>;
             cbxAuthor.DisplayMember = "Name";
-            cbxAuthor.DataSource = authors;
+            if (authors != null) cbxAuthor.DataSource = authors.ToList();
         }
 
       
@@ -84,7 +78,7 @@ namespace BookStore.UserControlls
             ComboBox cmb = (ComboBox)sender;
             Category selectedValue = (Category)cmb.SelectedValue;
 
-            SelectCategor = selectedValue;
+            _selectCategory = selectedValue;
         }
 
         private void cbxAuthor_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,7 +86,7 @@ namespace BookStore.UserControlls
             ComboBox cmb = (ComboBox)sender;
             Author selectedValue = (Author)cmb.SelectedValue;
 
-            SelectAuthor = selectedValue;
+            _selectAuthor = selectedValue;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -134,16 +128,11 @@ namespace BookStore.UserControlls
                        Price=Convert.ToDecimal(txtPrice.Text),
                        Stock=Convert.ToInt32(txtStock.Text),
                        OriginalPrice=Convert.ToDecimal(txtOriginPrice.Text),
-                       AuthorId=SelectAuthor.Id,
-                       CategoryId=SelectCategor.Id
+                       AuthorId=_selectAuthor.Id,
+                       CategoryId= _selectCategory.Id
                     };
-                    _bookService.Add(book);
-
-                    
-
-                    
-
-                    _bookService.SaveChanges();
+                    _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.Add);
+                    _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.SaveChanges);
                     LoadData();
                 }
                 catch (Exception ex)
@@ -157,16 +146,12 @@ namespace BookStore.UserControlls
         {
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataGridViewRow = dgdBook.Rows[indexOfContent];
-            if (dataGridViewRow != null)
-            {
-                txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
-                txtStock.Text = dataGridViewRow.Cells[2].Value.ToString();
-                txtPrice.Text = dataGridViewRow.Cells[3].Value.ToString();
+            txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
+            txtStock.Text = dataGridViewRow.Cells[2].Value.ToString();
+            txtPrice.Text = dataGridViewRow.Cells[3].Value.ToString();
                
-                cbxAuthor.Text = dataGridViewRow.Cells[4].Value.ToString();
-                cbxCategory.Text = dataGridViewRow.Cells[5].Value.ToString();
-
-            }
+            cbxAuthor.Text = dataGridViewRow.Cells[4].Value.ToString();
+            cbxCategory.Text = dataGridViewRow.Cells[5].Value.ToString();
         }
     }
 }

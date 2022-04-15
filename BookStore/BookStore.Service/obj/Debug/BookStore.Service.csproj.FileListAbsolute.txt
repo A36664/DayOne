@@ -28,3 +28,5 @@ C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\obj\Debug\BookSto
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\obj\Debug\BookStore.Service.csproj.CopyComplete
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\obj\Debug\BookStore.Service.dll
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\obj\Debug\BookStore.Service.pdb
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\BookStore.Shared.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\BookStore.Shared.pdb

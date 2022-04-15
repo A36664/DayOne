@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Service;
 
 namespace BookStore
 {
@@ -18,18 +19,20 @@ namespace BookStore
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
         private readonly ICategoryService _categoryService;
-        public FrmMain(ICustomerService customerService,IBookService bookService,IAuthorService authorService,ICategoryService categoryService)
+        private readonly IMainHandler _mainHandler;
+        public FrmMain(ICustomerService customerService,IBookService bookService,IAuthorService authorService,ICategoryService categoryService,IMainHandler mainHandler)
         {
             _customerService = customerService;
             _authorService = authorService;
             _bookService = bookService;
             _categoryService = categoryService;
+            _mainHandler= mainHandler;
             InitializeComponent();
         }
 
         private void BookClickEventHandler(object sender, EventArgs e)
         {
-            BookUC bookUC = new BookUC(_bookService,_categoryService,_authorService);
+            BookUc bookUC = new BookUc(_mainHandler);
             bookUC.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(bookUC);
@@ -37,7 +40,7 @@ namespace BookStore
 
         private void CustomerClickEventHandler(object sender, EventArgs e)
         {
-            CustomerUC customerUC = new CustomerUC(_customerService);
+            CustomerUC customerUC = new CustomerUC(_mainHandler);
             customerUC.Dock= DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(customerUC);
@@ -53,7 +56,7 @@ namespace BookStore
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            BookUC bookUC = new BookUC(_bookService, _categoryService, _authorService);
+            BookUc bookUC = new BookUc(_mainHandler);
             bookUC.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(bookUC);

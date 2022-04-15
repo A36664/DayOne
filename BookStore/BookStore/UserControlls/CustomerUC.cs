@@ -10,26 +10,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Service;
 using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControlls
 {
     public partial class CustomerUC : UserControl
     {
-        private readonly ICustomerService _customerService;
-        public CustomerUC(ICustomerService customerService)
+        private readonly IMainHandler _mainHandler;
+        public CustomerUC(IMainHandler mainHandler)
         {
-            _customerService = customerService;
+            _mainHandler = mainHandler;
             InitializeComponent();
 
-           
+
         }
 
         private void CustomerUC_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-        private void LoadData(string search=null)
+        private void LoadData(string search = null)
         {
 
             DataTable dataTable = new DataTable();
@@ -38,22 +39,23 @@ namespace BookStore.UserControlls
             dataTable.Columns.Add(CustomerFields.PhoneNumber, typeof(string));
             dataTable.Columns.Add(CustomerFields.Email, typeof(string));
             List<Customer> customers = new List<Customer>();
-            if(search != null)
+            if (search != null)
             {
-                customers.Add(_customerService.GetByAlias(search));
+                var customer = _mainHandler.Handle(search, StatusTypes.Customer, ActionTypes.GetById) as Customer;
+                customers.Add(customer);
             }
             else
             {
-                customers= _customerService.GetAll().ToList();
+                if (_mainHandler.Handle(null, StatusTypes.Customer, ActionTypes.GetAll) is IEnumerable<Customer> results) customers = results.ToList();
             }
-           
+
             foreach (Customer customer in customers)
             {
-                
+
                 dataTable.Rows.Add(customer.Id, customer.Name.Decrypt(EncryptionKey), customer.PhoneNumber.Decrypt(EncryptionKey), customer.Email.Decrypt(EncryptionKey));
-                
+
             }
-            
+
             dgdCustomer.DataSource = dataTable;
         }
 
@@ -61,12 +63,9 @@ namespace BookStore.UserControlls
         {
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataGridViewRow = dgdCustomer.Rows[indexOfContent];
-            if (dataGridViewRow != null)
-            {
-                txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
-                txtPhone.Text = dataGridViewRow.Cells[2].Value.ToString();
-                txtEmail.Text = dataGridViewRow.Cells[3].Value.ToString();
-            }
+            txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
+            txtPhone.Text = dataGridViewRow.Cells[2].Value.ToString();
+            txtEmail.Text = dataGridViewRow.Cells[3].Value.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -90,7 +89,7 @@ namespace BookStore.UserControlls
                 return;
             }
 
-            if(MessageBox.Show("Thêm khách hàng","Chú ý",MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (MessageBox.Show("Thêm khách hàng", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 try
                 {
@@ -100,8 +99,8 @@ namespace BookStore.UserControlls
                         Name = txtName.Text.Encrypt(EncryptionKey),
                         PhoneNumber = txtPhone.Text.Encrypt(EncryptionKey)
                     };
-                    _customerService.Add(customer);
-                    _customerService.SaveChanges();
+                    _mainHandler.Handle(customer, StatusTypes.Customer, ActionTypes.Add);
+                    _mainHandler.Handle(null,StatusTypes.Customer,ActionTypes.SaveChanges);
                     LoadData();
                 }
                 catch (Exception ex)
@@ -109,7 +108,7 @@ namespace BookStore.UserControlls
                     MessageBox.Show("Lỗi ngoại lệ: " + ex.Message.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-           
+
 
         }
 

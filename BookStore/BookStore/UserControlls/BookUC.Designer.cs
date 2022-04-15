@@ -1,6 +1,6 @@
 ﻿namespace BookStore.UserControlls
 {
-    partial class BookUC
+    partial class BookUc
     {
         /// <summary> 
         /// Required designer variable.

@@ -7634,19 +7634,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\A36664\\.nuget\\packages\\": {}
+    "C:\\Users\\nvluc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
-      "packagesPath": "C:\\Users\\A36664\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A36664\\Desktop\\CMC\\DayOne\\test_dayone\\BookStore\\obj\\",
+      "projectPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore\\BookStore.csproj",
+      "packagesPath": "C:\\Users\\nvluc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nvluc\\OneDrive - CMC Global\\Desktop\\DayoneExam\\DayOne\\test_dayone\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\A36664\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nvluc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7717,7 +7717,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
