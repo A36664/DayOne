@@ -1,11 +1,7 @@
-﻿using BookStore.Data.EF;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using BookStore.Data.EF;
 
-namespace BookStore.Infrastructure
+namespace BookStore.Data.Infrastructure
 {
     public interface IDbFactory : IDisposable
     {

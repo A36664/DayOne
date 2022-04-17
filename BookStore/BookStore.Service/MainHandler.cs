@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using BookStore.Model.Entities;
 using BookStore.Service.Services;
 using BookStore.Shared;
+using BookStore.Shared.Helpers;
+using log4net;
 
 namespace BookStore.Service
 {
@@ -18,12 +20,15 @@ namespace BookStore.Service
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
         private  readonly  ICategoryService _categoryService;
-        public MainHandler(ICustomerService customerService,IBookService bookService,IAuthorService authorService,ICategoryService categoryService)
+        private readonly IOrderService _orderService;
+        private static readonly ILog Log = LogHelper.GetLogger();
+        public MainHandler(ICustomerService customerService,IBookService bookService,IAuthorService authorService,ICategoryService categoryService,IOrderService orderService)
         {
             _customerService = customerService;
             _bookService = bookService;
             _authorService= authorService;
             _categoryService= categoryService;
+            _orderService= orderService;
         }
 
       /// <summary>
@@ -35,23 +40,49 @@ namespace BookStore.Service
       /// <returns></returns>
         public object Handle(object sender, string type,string act)
         {
-            switch (type)
+            Log.Info("Begin: Handle");
+            try
             {
-                case Constants.StatusTypes.Customer:
-                    return CustomerActions(sender,act);
-                case Constants.StatusTypes.Book:
-                    return BookActions(sender, act);
-                case Constants.StatusTypes.Category:
-                    return CategoryActions(sender, act);
-                case Constants.StatusTypes.Author:
-                    return AuthorActions(sender, act);
+                switch (type)
+                {
+                    case Constants.StatusTypes.Customer:
+                        return CustomerActions(sender, act);
+                    case Constants.StatusTypes.Book:
+                        return BookActions(sender, act);
+                    case Constants.StatusTypes.Category:
+                        return CategoryActions(sender, act);
+                    case Constants.StatusTypes.Author:
+                        return AuthorActions(sender, act);
+                    case Constants.StatusTypes.Order:
+                        return OrderActions(sender, act);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Log.Error("Handle Exception: "+e.Message);
+                throw;
+            }
+            
+            Log.Info("End: Handle");
+            return null;
+        }
+
+        #region CallActions
+
+        private object OrderActions(object sender, string act)
+        {
+            switch (act)
+            {
+                case Constants.ActionTypes.GetAll:
+                    return _orderService.GetAllOrder();
 
             }
 
             return null;
         }
 
-        #region CallActions
         /// <summary>
         /// call services of category
         /// </summary>
@@ -64,7 +95,6 @@ namespace BookStore.Service
             {
                 case Constants.ActionTypes.GetAll:
                     return _categoryService.GetAll();
-               
 
             }
             return null;
@@ -82,8 +112,11 @@ namespace BookStore.Service
             {
                 case Constants.ActionTypes.GetAll:
                     return _bookService.GetAll();
-                case Constants.ActionTypes.GetById:
-                    return _customerService.GetByAlias(sender.ToString());
+                case Constants.ActionTypes.GetByAlias:
+                    return _bookService.GetByAlias(sender.ToString());
+                case Constants.ActionTypes.GetAllBooks:
+                    return _bookService.GetAllBooks();
+
 
             }
             return null;
@@ -101,7 +134,7 @@ namespace BookStore.Service
             {
                 case Constants.ActionTypes.GetAll:
                     return _authorService.GetAll();
-                case Constants.ActionTypes.GetById:
+                case Constants.ActionTypes.GetByAlias:
                     return _authorService.GetByAlias(sender.ToString());
 
             }
@@ -119,7 +152,7 @@ namespace BookStore.Service
             {
                 case Constants.ActionTypes.GetAll:
                     return _customerService.GetAll();
-                case Constants.ActionTypes.GetById:
+                case Constants.ActionTypes.GetByAlias:
                     return _customerService.GetByAlias(sender.ToString());
                 case Constants.ActionTypes.Add:
                     _customerService.Add(sender as Customer);

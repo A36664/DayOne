@@ -1,15 +1,17 @@
 ﻿using BookStore.Data.Repositories;
-using BookStore.Infrastructure;
-using BookStore.Repositories;
 using BookStore.Service.Services;
 using SimpleInjector;
 using SimpleInjector.Diagnostics;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Data.Infrastructure;
 using BookStore.Service;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace BookStore
 {
@@ -21,12 +23,29 @@ namespace BookStore
         [STAThread]
         static void Main()
         {
+
+
+            log4net.Config.XmlConfigurator.Configure();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
+
+         
+
+
+
+
             var container = Bootstrap();
 
+
+
+
             Application.Run(container.GetInstance<FrmMain>());
+
+
+
         }
         private static Container Bootstrap()
         {
@@ -55,10 +74,10 @@ namespace BookStore
             container.Register<IAuthorService, AuthorService>();
             container.Register<ICategoryService, CategoryService>();
             container.Register<IMainHandler,MainHandler>();
-
             AutoRegisterWindowsForms(container);
 
             container.Verify();
+           
 
             return container;
         }

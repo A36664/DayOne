@@ -1,0 +1,4 @@
+2022-04-17 16:31:53.839 +07:00 [INF] Hello, Serilog!
+2022-04-17 16:34:47.753 +07:00 [INF] Hello, Serilog!
+2022-04-17 16:35:08.302 +07:00 [INF] Begin: GetAllBooks
+2022-04-17 16:35:17.303 +07:00 [INF] end: GetAllBooks

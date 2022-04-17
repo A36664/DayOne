@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 namespace BookStore.Model.Entities
 {
     [Table("Authors")]
-    public class Author
+    public sealed class Author
     {
+        public Author()
+        {
+            Books = new HashSet<Book>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -22,5 +27,7 @@ namespace BookStore.Model.Entities
 
         [MaxLength(100)]
         public string Email { get; set; }
+
+        public ICollection<Book> Books { get; set; }
     }
 }

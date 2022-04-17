@@ -1,11 +1,12 @@
-﻿using BookStore.Infrastructure;
-using BookStore.Model.Entities;
+﻿using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookStore.Data.Infrastructure;
 
 namespace BookStore.Data.Repositories
 {
@@ -16,29 +17,49 @@ namespace BookStore.Data.Repositories
         }
 
        
-
+        /// <summary>
+        /// Get all books
+        /// </summary>
+        /// <returns></returns>
         public List<BookViewModel> GetAllBooks()
         {
-            var query = from b in DbContext.Books
-                      
-                        join ct in DbContext.Categories on b.CategoryId equals ct.Id
-                        join aut in DbContext.Authors on b.Id equals aut.Id
-                        select new { b, ct, aut };
-            int totalRow =  query.Count();
-            var results =  query.Select(x => new BookViewModel()
+            var books =  DbContext.Books.Include(x => x.Author).Include(x => x.Category).Select(x => new BookViewModel()
             {
-                Id = x.b.Id,
-                Name = x.b.Name,
-                OriginalPrice = x.b.OriginalPrice,
-                Price = x.b.Price,
-                Stock = x.b.Stock,
-                AuthorName = x.aut.Name,
-                CategoryName = x.ct.Name,
-
+                AuthorId = x.AuthorId,
+                AuthorName = x.Author.Name,
+                CategoryId = x.CategoryId,
+                CategoryName = x.Category.Name,
+                Name = x.Name,
+                OriginalPrice = x.OriginalPrice,
+                Id = x.Id,
+                Price = x.Price,
+                Stock = x.Stock
             }).ToList();
-            return results;
-        }
 
-      
+            return books;
+        }
+        /// <summary>
+        /// get all book by alias
+        /// </summary>
+        /// <param name="alias"></param>
+        /// <returns></returns>
+        public List<BookViewModel> GetByAlias(string alias)
+        {
+            var books =  DbContext.Books.Where(x => x.Name.Contains(alias)).Include(x => x.Category)
+                .Include(x => x.Author).Select(x => new BookViewModel()
+                {
+                    AuthorId = x.AuthorId,
+                    AuthorName = x.Author.Name,
+                    CategoryId = x.CategoryId,
+                    CategoryName = x.Category.Name,
+                    Name = x.Name,
+                    OriginalPrice = x.OriginalPrice,
+                    Id = x.Id,
+                    Price = x.Price,
+                    Stock = x.Stock
+                }).ToList();
+            return books;
+        }
     }
+    
 }

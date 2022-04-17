@@ -9,6 +9,6 @@ namespace BookStore.Service.Services
 {
     public interface IAuthorService:IBaseService<Author>
     {
-        Author GetByAlias(string alias);
+        List<Author> GetByAlias(string alias);
     }
 }

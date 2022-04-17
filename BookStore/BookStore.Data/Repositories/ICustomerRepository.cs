@@ -1,15 +1,11 @@
-﻿using BookStore.Infrastructure;
+﻿using System.Collections.Generic;
+using BookStore.Data.Infrastructure;
 using BookStore.Model.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BookStore.Repositories
+namespace BookStore.Data.Repositories
 {
     public interface ICustomerRepository : IRepository<Customer>
     {
-
+        List<Customer> GetByAlias(string alias);
     }
 }

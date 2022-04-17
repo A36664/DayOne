@@ -22,3 +22,15 @@ C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.dll
 C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.pdb
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.csproj.AssemblyReference.cache
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\BookStore.Model.dll.config
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\BookStore.Model.dll
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\BookStore.Model.pdb
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\EntityFramework.dll
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\EntityFramework.xml
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.csproj.AssemblyReference.cache
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.csproj.CoreCompileInputs.cache
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.csproj.CopyComplete
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.dll
+C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Model\obj\Debug\BookStore.Model.pdb

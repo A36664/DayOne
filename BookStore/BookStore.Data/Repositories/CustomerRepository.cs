@@ -1,12 +1,9 @@
-﻿using BookStore.Infrastructure;
-using BookStore.Model.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BookStore.Data.Infrastructure;
+using BookStore.Model.Entities;
 
-namespace BookStore.Repositories
+namespace BookStore.Data.Repositories
 {
     public class CustomerRepository : RepositoryBase<Customer>, ICustomerRepository
     {
@@ -14,7 +11,14 @@ namespace BookStore.Repositories
         {
         }
 
-
-
+        /// <summary>
+        /// Get customer by alias
+        /// </summary>
+        /// <param name="alias">alias exam is name of customer</param>
+        /// <returns></returns>
+        public List<Customer> GetByAlias(string alias)
+        {
+            return DbContext.Customers.Where(x => x.Name.Contains(alias)).ToList();
+        }
     }
 }

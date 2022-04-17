@@ -15,7 +15,7 @@ namespace BookStore.Model.ViewModels
         public int Stock { set; get; }
         public decimal Price { set; get; }
         public string AuthorName { set; get; }
-        public int AtuhorId { set; get; }
+        public int AuthorId { set; get; }
         public string CategoryName { get; set; }
         public int CategoryId { get; set; }
 

@@ -8,7 +8,6 @@ namespace BookStore.Shared
 {
     public static class Constants
     {
-        public const string ConnectionString = "Server=.;Database=BookStoreDayOne;Trusted_Connection=True;";
         public static string EncryptionKey = "fkasfdshfjkwjfknbsajkfjka";
         public struct BookFields
         {
@@ -42,6 +41,18 @@ namespace BookStore.Shared
            
 
         }
+      
+        public struct OrderFields
+        {
+            public static string OrderId = "Mã đơn hàng";
+            public static string BookId = "Mã sách";
+            public static string BookName = "Tên sách";
+            public static string Quantity = "Số lượng bán";
+            public static string Price = "Giá bán";
+            public static string CustomerName = "Tên khách hàng";
+            public static string CustomerPhoneNumber = "Email khách hàng";
+
+        }
 
         public static class StatusTypes
         {
@@ -50,6 +61,7 @@ namespace BookStore.Shared
             public const string Book = "Book";
             public const string Category = "Category";
             public const string Author = "Author";
+            public const string Order = "Order";
         }
         public static class  ActionTypes
         {
@@ -58,6 +70,7 @@ namespace BookStore.Shared
             public const string Update = "Update";
             public const  string Delete = "Delete";
             public const string GetById = "GetById";
+            public const string GetByAlias = "GetByAlias";
             public const string Add = "Add";
             public const string SaveChanges = "SaveChanges";
             public const string GetAllBooks = "GetAllBooks";

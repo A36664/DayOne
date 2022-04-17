@@ -1,5 +1,4 @@
 ﻿using BookStore.Service.Services;
-using BookStore.UserControlls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStore.Service;
+using BookStore.UserControls;
 
 namespace BookStore
 {
@@ -32,42 +32,45 @@ namespace BookStore
 
         private void BookClickEventHandler(object sender, EventArgs e)
         {
-            BookUc bookUC = new BookUc(_mainHandler);
-            bookUC.Dock = DockStyle.Fill;
+            var bookUc = new BookUc(_mainHandler);
+            bookUc.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
-            panelMain.Controls.Add(bookUC);
+            panelMain.Controls.Add(bookUc);
         }
 
         private void CustomerClickEventHandler(object sender, EventArgs e)
         {
-            CustomerUC customerUC = new CustomerUC(_mainHandler);
-            customerUC.Dock= DockStyle.Fill;
+            var customerUc = new CustomerUc(_mainHandler);
+            customerUc.Dock= DockStyle.Fill;
             panelMain.Controls.Clear();
-            panelMain.Controls.Add(customerUC);
+            panelMain.Controls.Add(customerUc);
         }
 
         private void AuthorClickEventHandler(object sender, EventArgs e)
         {
-            AuthorUC authorUC = new AuthorUC(_authorService);
-            authorUC.Dock= DockStyle.Fill;
+            var authorUc = new AuthorUc(_mainHandler);
+            authorUc.Dock= DockStyle.Fill;
             panelMain.Controls.Clear();
-            panelMain.Controls.Add(authorUC);
+            panelMain.Controls.Add(authorUc);
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            BookUc bookUC = new BookUc(_mainHandler);
-            bookUC.Dock = DockStyle.Fill;
+            var bookUc = new BookUc(_mainHandler);
+            bookUc.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
-            panelMain.Controls.Add(bookUC);
+            panelMain.Controls.Add(bookUc);
         }
 
-        private void CategoryClickEnvenHandler(object sender, EventArgs e)
+       
+
+        private void CategoryClickEnventHandler(object sender, EventArgs e)
         {
-            CategoryUC categoryUC = new CategoryUC(_categoryService);
-            categoryUC.Dock = DockStyle.Fill;
+
+            CategoryUc categoryUc = new CategoryUc(_categoryService);
+            categoryUc.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
-            panelMain.Controls.Add(categoryUC);
+            panelMain.Controls.Add(categoryUc);
         }
     }
 }

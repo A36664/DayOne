@@ -2,6 +2,7 @@
 using BookStore.Shared;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace BookStore.Data.EF
 {
     public class BookStoreContext : DbContext
     {
-        public BookStoreContext() : base(Constants.ConnectionString)
+        public BookStoreContext() : base(ConfigurationManager.ConnectionStrings["MyDBConnectionString"].ConnectionString)
         {
 
         }

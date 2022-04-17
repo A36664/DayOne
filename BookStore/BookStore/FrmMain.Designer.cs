@@ -35,6 +35,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.menuHelperUc1 = new BookStore.UserControls.MenuHelperUc();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem1});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip2.Location = new System.Drawing.Point(790, 0);
+            this.menuStrip2.Location = new System.Drawing.Point(834, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip2.Size = new System.Drawing.Size(126, 660);
@@ -98,20 +99,28 @@
             this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 50);
             this.toolStripMenuItem1.Text = "Category";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.CategoryClickEnvenHandler);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.CategoryClickEnventHandler);
             // 
             // panelMain
             // 
             this.panelMain.Location = new System.Drawing.Point(13, 70);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(753, 578);
+            this.panelMain.Size = new System.Drawing.Size(818, 578);
             this.panelMain.TabIndex = 3;
+            // 
+            // menuHelperUc1
+            // 
+            this.menuHelperUc1.Location = new System.Drawing.Point(3, 7);
+            this.menuHelperUc1.Name = "menuHelperUc1";
+            this.menuHelperUc1.Size = new System.Drawing.Size(831, 57);
+            this.menuHelperUc1.TabIndex = 4;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 660);
+            this.ClientSize = new System.Drawing.Size(960, 660);
+            this.Controls.Add(this.menuHelperUc1);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip2);
             this.Name = "FrmMain";
@@ -131,6 +140,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelMain;
+        private UserControls.MenuHelperUc menuHelperUc1;
     }
 }
 
