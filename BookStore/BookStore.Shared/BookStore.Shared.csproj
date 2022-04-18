@@ -56,5 +56,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Model\BookStore.Model.csproj">
+      <Project>{6814EC61-DD22-4C22-AB50-073EB0D4DD7D}</Project>
+      <Name>BookStore.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

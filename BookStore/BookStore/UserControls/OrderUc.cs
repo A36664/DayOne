@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BookStore.Model.ViewModels;
+﻿using BookStore.Model.ViewModels;
 using BookStore.Service;
 using BookStore.Shared;
 using BookStore.Shared.Helpers;
 using log4net;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace BookStore.UserControls
 {
@@ -42,18 +37,16 @@ namespace BookStore.UserControls
             dataTable.Columns.Add(Constants.OrderFields.CustomerPhoneNumber, typeof(string));
             var orders = new List<OrderViewModel>();
 
-            if (_mainHandler.Handle(null, Constants.StatusTypes.Order, Constants.ActionTypes.GetByAlias) is IEnumerable<OrderViewModel> results) orders.AddRange(results);
-            orders.AddRange(new List<OrderViewModel>()
-                {
-                    new OrderViewModel(){BookId = 1,BookName = "book1",CustomerEmail = "book1@gmail.com",CustomerName = "customer1",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
-                    new OrderViewModel(){BookId = 1,BookName = "book2",CustomerEmail = "book1@gmail.com",CustomerName = "customer2",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
-                    new OrderViewModel(){BookId = 1,BookName = "book3",CustomerEmail = "book1@gmail.com",CustomerName = "customer3",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
-                    new OrderViewModel(){BookId = 1,BookName = "book4",CustomerEmail = "book1@gmail.com",CustomerName = "customer4",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
-                    new OrderViewModel(){BookId = 1,BookName = "book5",CustomerEmail = "book1@gmail.com",CustomerName = "customer5",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156}
-                });
+            if (_mainHandler.Handle(null, Constants.StatusTypes.Order, Constants.ActionTypes.GetAll) is IEnumerable<OrderViewModel> results) orders.AddRange(results);
+
             foreach (var order in orders)
             {
-                dataTable.Rows.Add(order.OrderId, order.BookId, order.BookName, order.Quantity, order.Price, order.CustomerName, order.CustomerPhoneNumber);
+                foreach (var orderDetail in order.OrderDetails)
+                {
+                    dataTable.Rows.Add(order.OrderId, orderDetail.BookId, orderDetail.Book.Name, orderDetail.Quantity, orderDetail.Price, order.CustomerName, order.CustomerPhoneNumber);
+                }
+
+
             }
 
             dgdOrder.DataSource = dataTable;

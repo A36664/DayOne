@@ -1,17 +1,11 @@
-﻿using BookStore.Data.Repositories;
+﻿using BookStore.Data.Infrastructure;
+using BookStore.Data.Repositories;
+using BookStore.Service;
 using BookStore.Service.Services;
 using SimpleInjector;
 using SimpleInjector.Diagnostics;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookStore.Data.Infrastructure;
-using BookStore.Service;
-using Microsoft.Extensions.Logging;
-using Serilog;
 
 namespace BookStore
 {
@@ -32,7 +26,7 @@ namespace BookStore
 
 
 
-         
+
 
 
 
@@ -57,9 +51,9 @@ namespace BookStore
             //registration.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
             //    "Reason of suppression");
 
-            
+
             //Register your types, for instance:
-            container.Register<IDbFactory,DbFactory>(Lifestyle.Singleton);
+            container.Register<IDbFactory, DbFactory>(Lifestyle.Singleton);
             container.Register<IUnitOfWork, UnitOfWork>();
 
             // register repositories
@@ -67,19 +61,19 @@ namespace BookStore
             container.Register<IAuthorRepository, AuthorRepository>();
             container.Register<ICategoryRepository, CategoryRepository>();
             container.Register<IBookRepository, BookRepository>();
-            container.Register<IOrderRepository,OrderRepository>();
-            container.Register<IOrderDetailRepository,OrderDetailRepository>();
+            container.Register<IOrderRepository, OrderRepository>();
+            container.Register<IOrderDetailRepository, OrderDetailRepository>();
             // register services
             container.Register<ICustomerService, CustomerService>();
             container.Register<IBookService, BookService>();
             container.Register<IAuthorService, AuthorService>();
             container.Register<ICategoryService, CategoryService>();
-            container.Register<IMainHandler,MainHandler>();
-            container.Register<IOrderService,OrderService>();
+            container.Register<IMainHandler, MainHandler>();
+            container.Register<IOrderService, OrderService>();
             AutoRegisterWindowsForms(container);
 
             container.Verify();
-           
+
 
             return container;
         }

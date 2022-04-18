@@ -1,25 +1,17 @@
-﻿using BookStore.Service.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BookStore.Service;
+﻿using BookStore.Service;
 using BookStore.UserControls;
+using System;
+using System.Windows.Forms;
 
 namespace BookStore
 {
     public partial class FrmMain : Form
     {
-    
+
         private readonly IMainHandler _mainHandler;
         public FrmMain(IMainHandler mainHandler)
         {
-            _mainHandler= mainHandler;
+            _mainHandler = mainHandler;
             InitializeComponent();
 
             #region Init override event click
@@ -52,26 +44,17 @@ namespace BookStore
 
         private void BookClickEventHandler(object sender, EventArgs e)
         {
-            var bookUc = new BookUc(_mainHandler);
-            bookUc.Dock = DockStyle.Fill;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(bookUc);
+
         }
 
         private void CustomerClickEventHandler(object sender, EventArgs e)
         {
-            var customerUc = new CustomerUc(_mainHandler);
-            customerUc.Dock= DockStyle.Fill;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(customerUc);
+
         }
 
         private void AuthorClickEventHandler(object sender, EventArgs e)
         {
-            var authorUc = new AuthorUc(_mainHandler);
-            authorUc.Dock= DockStyle.Fill;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(authorUc);
+
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -85,15 +68,12 @@ namespace BookStore
             this.KeyDown += new KeyEventHandler(menuHelper1_KeyDown);
         }
 
-       
+
 
         private void CategoryClickEnventHandler(object sender, EventArgs e)
         {
 
-            var orderUc = new OrderUc(_mainHandler);
-            orderUc.Dock = DockStyle.Fill;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(orderUc);
+
         }
 
         #region Declare pointer control
@@ -266,32 +246,44 @@ namespace BookStore
 
         #region Action when click or press F{0-12}
         /// <summary>
-        /// Click or press F1
+        /// Click or press F1 open book
         /// </summary>
         public void F1CLickOrPress()
         {
-            MessageBox.Show("Control F1");
+            var bookUc = new BookUc(_mainHandler);
+            bookUc.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(bookUc);
         }
         /// <summary>
-        /// Click or press F2
+        /// Click or press F2 open CustomerUc
         /// </summary>
         public void F2CLickOrPress()
         {
-            MessageBox.Show("Control F2");
+            var customerUc = new CustomerUc(_mainHandler);
+            customerUc.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(customerUc);
         }
         /// <summary>
-        /// Click or press F3
+        /// Click or press F3 open AuthorUc
         /// </summary>
         public void F3CLickOrPress()
         {
-            MessageBox.Show("Control F3");
+            var authorUc = new AuthorUc(_mainHandler);
+            authorUc.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(authorUc);
         }
         /// <summary>
-        /// Click or press F4
+        /// Click or press F4 open order OrderUc
         /// </summary>
         public void F4CLickOrPress()
         {
-            MessageBox.Show("Control F4");
+            var orderUc = new OrderUc(_mainHandler);
+            orderUc.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(orderUc);
         }
         /// <summary>
         /// Click or press F5

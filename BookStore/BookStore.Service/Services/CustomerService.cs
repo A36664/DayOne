@@ -1,13 +1,9 @@
-﻿using BookStore.Model.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
+﻿using BookStore.Data.Infrastructure;
 using BookStore.Data.Repositories;
+using BookStore.Model.Entities;
 using BookStore.Shared.Helpers;
 using log4net;
+using System.Collections.Generic;
 
 namespace BookStore.Service.Services
 {
@@ -19,7 +15,7 @@ namespace BookStore.Service.Services
         public CustomerService(ICustomerRepository customerRepository, IUnitOfWork unitOfWork)
         {
             _customerRepository = customerRepository;
-            _unitOfWork=unitOfWork;
+            _unitOfWork = unitOfWork;
         }
         /// <summary>
         ///  Add a customer
@@ -28,7 +24,7 @@ namespace BookStore.Service.Services
         public Customer Add(Customer customer)
         {
             Log.Info("Begin: Add");
-          var result=   _customerRepository.Add(customer);
+            var result = _customerRepository.Add(customer);
             Log.Info("End: Add");
             return result;
         }
@@ -51,7 +47,7 @@ namespace BookStore.Service.Services
         public Customer Get(int id)
         {
             Log.Info("Begin: Get");
-            var customer= _customerRepository.GetSingleById(id);
+            var customer = _customerRepository.GetSingleById(id);
             Log.Info("End: Get");
             return customer;
         }
@@ -62,7 +58,7 @@ namespace BookStore.Service.Services
         public IEnumerable<Customer> GetAll()
         {
             Log.Info("Begin: GetAll");
-            var customers= _customerRepository.GetAll();
+            var customers = _customerRepository.GetAll();
             Log.Info("End: GetAll");
             return customers;
         }
@@ -75,7 +71,7 @@ namespace BookStore.Service.Services
         {
 
             Log.Info("Begin: GetByAlias");
-            var customers= _customerRepository.GetByAlias(alias);
+            var customers = _customerRepository.GetByAlias(alias);
 
             Log.Info("End: GetByAlias");
 

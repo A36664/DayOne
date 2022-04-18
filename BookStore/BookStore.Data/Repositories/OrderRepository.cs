@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Odbc;
-using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
+﻿using BookStore.Data.Infrastructure;
 using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace BookStore.Data.Repositories
 {
@@ -23,12 +17,22 @@ namespace BookStore.Data.Repositories
         public List<OrderViewModel> GetAllOrders()
         {
 
+            var orders = DbContext.Orders.Include(cu => cu.Customer).Include(od => od.OrderDetails.Select(x => x.Book))
+                .Select(x => new OrderViewModel()
+                {
+                    OrderDetails = x.OrderDetails.ToList(),
+                    CustomerPhoneNumber = x.Customer.PhoneNumber,
+                    CustomerEmail = x.Customer.Email,
+                    CustomerName = x.Customer.Name,
+                    OrderId = x.OrderId
 
-            var orders = DbContext.Orders.Include(od => od.Customer).Include(x=>x.OrderDetails.Select(od=>od.Book)).ToList();
-           
-            
+                }).ToList();
 
-            return new List<OrderViewModel>();
+
+
+
+
+            return orders;
         }
     }
 }

@@ -1,13 +1,9 @@
-﻿using BookStore.Data.Repositories;
+﻿using BookStore.Data.Infrastructure;
+using BookStore.Data.Repositories;
 using BookStore.Model.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
 using BookStore.Shared.Helpers;
 using log4net;
+using System.Collections.Generic;
 
 namespace BookStore.Service.Services
 {
@@ -16,7 +12,7 @@ namespace BookStore.Service.Services
         private readonly ICategoryRepository _categoryRepository;
         private readonly IUnitOfWork _unitOfWork;
         private static readonly ILog Log = LogHelper.GetLogger();
-        public CategoryService(ICategoryRepository categoryRepository,IUnitOfWork unitOfWork)
+        public CategoryService(ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
         {
             _categoryRepository = categoryRepository;
             _unitOfWork = unitOfWork;
@@ -28,7 +24,7 @@ namespace BookStore.Service.Services
         public Category Add(Category category)
         {
             Log.Info("Begin: Add");
-          var result=  _categoryRepository.Add(category);
+            var result = _categoryRepository.Add(category);
             Log.Info("End: Add");
             return result;
         }
@@ -52,7 +48,7 @@ namespace BookStore.Service.Services
         public Category Get(int id)
         {
             Log.Info("Begin: Get");
-            var category= _categoryRepository.GetSingleById(id);
+            var category = _categoryRepository.GetSingleById(id);
             Log.Info("End: Get");
             return category;
         }
@@ -63,7 +59,7 @@ namespace BookStore.Service.Services
         public IEnumerable<Category> GetAll()
         {
             Log.Info("Begin: GetAll");
-            var categories= _categoryRepository.GetAll();
+            var categories = _categoryRepository.GetAll();
             Log.Info("End: GetAll");
             return categories;
         }

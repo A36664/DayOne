@@ -77,3 +77,28 @@ C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookSto
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Memory.xml
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\BookStore.Service.dll.config
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\BookStore.Shared.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\log4net.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Serilog.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Buffers.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Memory.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\BookStore.Shared.pdb
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\log4net.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Serilog.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Buffers.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Memory.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Castle.Core.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Moq.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Castle.Core.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\Moq.xml
+C:\Users\A36664\Desktop\CMC\DayOne\BookStore\BookStore.Service\bin\Debug\System.Threading.Tasks.Extensions.xml

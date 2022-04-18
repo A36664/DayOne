@@ -43,14 +43,14 @@
             this.panel1.Controls.Add(this.dgdOrder);
             this.panel1.Location = new System.Drawing.Point(-5, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(675, 327);
+            this.panel1.Size = new System.Drawing.Size(855, 327);
             this.panel1.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(246, 13);
+            this.label4.Location = new System.Drawing.Point(377, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 24);
             this.label4.TabIndex = 24;
@@ -71,7 +71,7 @@
             this.dgdOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdOrder.Location = new System.Drawing.Point(8, 100);
             this.dgdOrder.Name = "dgdOrder";
-            this.dgdOrder.Size = new System.Drawing.Size(661, 219);
+            this.dgdOrder.Size = new System.Drawing.Size(844, 219);
             this.dgdOrder.TabIndex = 23;
             // 
             // OrderUc
@@ -80,7 +80,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "OrderUc";
-            this.Size = new System.Drawing.Size(677, 346);
+            this.Size = new System.Drawing.Size(853, 346);
             this.Load += new System.EventHandler(this.OrderUc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using BookStore.Data.Infrastructure;
+﻿using BookStore.Data.Infrastructure;
 using BookStore.Model.Entities;
+using System.Collections.Generic;
 
 namespace BookStore.Data.Repositories
 {

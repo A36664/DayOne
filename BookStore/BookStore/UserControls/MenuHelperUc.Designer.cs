@@ -284,7 +284,7 @@
             this.btnF2.Name = "btnF2";
             this.btnF2.Size = new System.Drawing.Size(66, 20);
             this.btnF2.TabIndex = 1;
-            this.btnF2.Text = "Book";
+            this.btnF2.Text = "Customer";
             this.btnF2.UseVisualStyleBackColor = true;
             this.btnF2.Click += new System.EventHandler(this.btnF2_Click);
             // 
@@ -294,7 +294,7 @@
             this.btnF1.Name = "btnF1";
             this.btnF1.Size = new System.Drawing.Size(66, 20);
             this.btnF1.TabIndex = 0;
-            this.btnF1.Text = "Customer";
+            this.btnF1.Text = "Book";
             this.btnF1.UseVisualStyleBackColor = true;
             this.btnF1.Click += new System.EventHandler(this.btnF1_Click);
             // 

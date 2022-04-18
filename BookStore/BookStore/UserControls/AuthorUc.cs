@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Windows.Forms;
-using BookStore.Model.Entities;
+﻿using BookStore.Model.Entities;
 using BookStore.Service;
 using BookStore.Shared;
 using BookStore.Shared.Helpers;
 using log4net;
 using Microsoft.VisualStudio.Utilities.Internal;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControls
 {
-    public partial class AuthorUc :UserControl
+    public partial class AuthorUc : UserControl
     {
         private readonly IMainHandler _mainHandler;
         private static readonly ILog Log = LogHelper.GetLogger();
@@ -34,7 +34,7 @@ namespace BookStore.UserControls
         /// Load list authors for data gird view
         /// </summary>
         /// <param name="search"></param>
-       private void LoadData(string search=null)
+        private void LoadData(string search = null)
         {
             Log.Info("Begin: LoadData");
             var dataTable = new DataTable();
@@ -43,9 +43,9 @@ namespace BookStore.UserControls
             dataTable.Columns.Add(AuthorFields.PhoneNumber, typeof(string));
             dataTable.Columns.Add(AuthorFields.Email, typeof(string));
             var authors = new List<Author>();
-            if(search == null)
+            if (search == null)
             {
-                authors= _mainHandler.Handle(null, StatusTypes.Author, ActionTypes.GetAll) as List<Author>;
+                authors = _mainHandler.Handle(null, StatusTypes.Author, ActionTypes.GetAll) as List<Author>;
 
             }
             else
@@ -108,7 +108,7 @@ namespace BookStore.UserControls
             }
             catch (Exception ex)
             {
-                Log.Error("btnAdd_Click: "+ex.Message);
+                Log.Error("btnAdd_Click: " + ex.Message);
             }
             Log.Info("End: btnAdd_Click");
         }
@@ -146,7 +146,7 @@ namespace BookStore.UserControls
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtName.Text=null;
+            txtName.Text = null;
             txtPhone.Text = null;
             txtEmail.Text = null;
             LoadData();

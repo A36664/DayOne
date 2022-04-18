@@ -1,8 +1,7 @@
 ﻿namespace BookStore.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class removeBookInCategory : DbMigration
     {
         public override void Up()
@@ -16,18 +15,18 @@
             AddForeignKey("dbo.Books", "CategoryId", "dbo.Categories", "Id", cascadeDelete: true);
             DropTable("dbo.BookInCategories");
         }
-        
+
         public override void Down()
         {
             CreateTable(
                 "dbo.BookInCategories",
                 c => new
-                    {
-                        CategoryId = c.Int(nullable: false),
-                        BookId = c.Int(nullable: false),
-                    })
+                {
+                    CategoryId = c.Int(nullable: false),
+                    BookId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.CategoryId);
-            
+
             DropForeignKey("dbo.Books", "CategoryId", "dbo.Categories");
             DropIndex("dbo.Books", new[] { "CategoryId" });
             DropColumn("dbo.Books", "CategoryId");

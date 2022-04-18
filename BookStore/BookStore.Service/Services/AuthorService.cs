@@ -1,13 +1,13 @@
-﻿using BookStore.Data.Repositories;
+﻿using BookStore.Data.Infrastructure;
+using BookStore.Data.Repositories;
 using BookStore.Model.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
 using BookStore.Shared.Helpers;
 using log4net;
+using System.Collections.Generic;
+using BookStore.Data.EF;
+using System.Data.Entity;
+using System.Linq;
+using Moq;
 
 namespace BookStore.Service.Services
 {
@@ -16,7 +16,7 @@ namespace BookStore.Service.Services
         private readonly IAuthorRepository _authorRepository;
         private readonly IUnitOfWork _unitOfWork;
         private static readonly ILog Log = LogHelper.GetLogger();
-        public AuthorService(IAuthorRepository authorRepository,IUnitOfWork unitOfWork)
+        public AuthorService(IAuthorRepository authorRepository, IUnitOfWork unitOfWork)
         {
             _authorRepository = authorRepository;
             _unitOfWork = unitOfWork;
@@ -28,7 +28,7 @@ namespace BookStore.Service.Services
         public Author Add(Author author)
         {
             Log.Info("Begin: Add");
-           var result= _authorRepository.Add(author);
+            var result = _authorRepository.Add(author);
             Log.Info("End: Add");
             return result;
         }
@@ -52,7 +52,7 @@ namespace BookStore.Service.Services
         public Author Get(int id)
         {
             Log.Info("Begin: Get");
-            var author= _authorRepository.GetSingleById(id);
+            var author = _authorRepository.GetSingleById(id);
             Log.Info("End: Get");
             return author;
         }
@@ -63,7 +63,7 @@ namespace BookStore.Service.Services
         public IEnumerable<Author> GetAll()
         {
             Log.Info("Begin: GetAll");
-            var authors= _authorRepository.GetAll();
+            var authors = _authorRepository.GetAll();
             Log.Info("End: GetAll");
             return authors;
         }
@@ -74,8 +74,9 @@ namespace BookStore.Service.Services
         /// <returns></returns>
         public List<Author> GetByAlias(string alias)
         {
+         
             Log.Info("Begin: GetByAlias");
-            var authors =_authorRepository.GetByAlias(alias);
+            var authors = _authorRepository.GetByAlias(alias);
             Log.Info("End: GetByAlias");
             return authors;
         }

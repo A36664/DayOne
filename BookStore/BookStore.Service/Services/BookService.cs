@@ -1,16 +1,11 @@
-﻿using BookStore.Data.Repositories;
+﻿using BookStore.Data.Infrastructure;
+using BookStore.Data.Repositories;
 using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
 using BookStore.Shared.Helpers;
 using log4net;
-using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 
 namespace BookStore.Service.Services
 {
@@ -21,7 +16,7 @@ namespace BookStore.Service.Services
         private readonly IBookRepository _bookRepository;
         private readonly IUnitOfWork _unitOfWork;
         private static readonly ILog Log = LogHelper.GetLogger();
-        public BookService(IBookRepository bookRepository,IUnitOfWork unitOfWork)
+        public BookService(IBookRepository bookRepository, IUnitOfWork unitOfWork)
         {
             _bookRepository = bookRepository;
             _unitOfWork = unitOfWork;
@@ -34,12 +29,12 @@ namespace BookStore.Service.Services
         public Book Add(Book book)
         {
             Log.Info("Begin: Add");
-          var   result=_bookRepository.Add(book);
+            var result = _bookRepository.Add(book);
             Log.Info("End: Add");
             return result;
         }
 
-       
+
         /// <summary>
         /// Delete a book
         /// </summary>
@@ -59,7 +54,7 @@ namespace BookStore.Service.Services
         public Book Get(int id)
         {
             Log.Info("Begin: Get");
-            var book= _bookRepository.GetSingleById(id);
+            var book = _bookRepository.GetSingleById(id);
             Log.Info("End: Get");
             return book;
         }
@@ -70,8 +65,8 @@ namespace BookStore.Service.Services
         public IEnumerable<Book> GetAll()
         {
             Log.Info("Begin: GetAll");
-            var result= _bookRepository.GetAll();
-          
+            var result = _bookRepository.GetAll();
+
             Log.Info("Begin: GetAll");
             return result;
         }
@@ -83,7 +78,7 @@ namespace BookStore.Service.Services
         {
 
             Log.Info("Begin: GetAllBooks");
-            var books= _bookRepository.GetAllBooks();
+            var books = _bookRepository.GetAllBooks();
             Log.Info("End: GetAllBooks");
             return books;
         }

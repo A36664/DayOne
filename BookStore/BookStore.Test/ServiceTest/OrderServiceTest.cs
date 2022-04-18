@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
+﻿using BookStore.Data.Infrastructure;
 using BookStore.Data.Repositories;
 using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
 using BookStore.Service.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
+using BookStore.Shared;
 
 namespace BookStore.Test.ServiceTest
 {
@@ -29,19 +26,7 @@ namespace BookStore.Test.ServiceTest
             _mockOrderRepository = new Mock<IOrderRepository>();
             _mockUnitOfWork = new Mock<IUnitOfWork>();
             _orderService = new OrderService(_mockOrderRepository.Object, _mockUnitOfWork.Object, _mockOrderDetailRepository.Object);
-            _orderViewModels = new List<OrderViewModel>()
-            {
-                new OrderViewModel()
-                {
-                    Price = 450.34m, BookName = "Book 1", Quantity = 345, CustomerName = "Customer 1",
-                    CustomerPhoneNumber = "097932132", CustomerEmail = "Customer1@gmail.com", BookId = 1, OrderId = 2
-                },
-                new OrderViewModel()
-                {
-                    Price = 145.34m, BookName = "Book 2", Quantity = 657, CustomerName = "Customer 2",
-                    CustomerPhoneNumber = "097932132", CustomerEmail = "Customer2@gmail.com", BookId = 2, OrderId = 3
-                }
-            };
+            _orderViewModels = Commons.OrderViewModels();
         }
 
         [TestMethod]

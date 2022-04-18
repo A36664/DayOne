@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
+﻿using BookStore.Data.Infrastructure;
 using BookStore.Data.Repositories;
 using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
 using BookStore.Shared.Helpers;
 using log4net;
+using System;
+using System.Collections.Generic;
 
 namespace BookStore.Service.Services
 {
-    public class OrderService:IOrderService
+    public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IOrderDetailRepository _orderDetailRepository;
         private readonly IUnitOfWork _unitOfWork;
         private static readonly ILog Log = LogHelper.GetLogger();
-        public OrderService(IOrderRepository orderRepository,IUnitOfWork unitOfWork, IOrderDetailRepository orderDetailRepository)
+        public OrderService(IOrderRepository orderRepository, IUnitOfWork unitOfWork, IOrderDetailRepository orderDetailRepository)
         {
-            _orderRepository=orderRepository;
+            _orderRepository = orderRepository;
             _unitOfWork = unitOfWork;
             _orderDetailRepository = orderDetailRepository;
         }
@@ -57,7 +54,7 @@ namespace BookStore.Service.Services
         public List<OrderViewModel> GetAllOrder()
         {
             Log.Info("Begin: GetAllOrder");
-            var orders=_orderRepository.GetAllOrders();
+            var orders = _orderRepository.GetAllOrders();
             Log.Info("End: GetAllOrder");
             return orders;
 
@@ -75,7 +72,7 @@ namespace BookStore.Service.Services
                     orderDetail.OrderId = order.OrderId;
                     _orderDetailRepository.Add(orderDetail);
                 }
-                
+
             }
             catch (Exception ex)
             {

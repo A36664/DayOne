@@ -1,9 +1,9 @@
-﻿using System;
+﻿using BookStore.Data.EF;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using BookStore.Data.EF;
 
 namespace BookStore.Data.Infrastructure
 {

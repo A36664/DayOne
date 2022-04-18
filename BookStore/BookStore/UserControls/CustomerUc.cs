@@ -1,12 +1,12 @@
-﻿using System;
+﻿using BookStore.Model.Entities;
+using BookStore.Service;
+using BookStore.Shared;
+using BookStore.Shared.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using BookStore.Model.Entities;
-using BookStore.Service;
-using BookStore.Shared;
-using BookStore.Shared.Helpers;
 using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControls
@@ -108,7 +108,7 @@ namespace BookStore.UserControls
                         PhoneNumber = txtPhone.Text.Encrypt(EncryptionKey)
                     };
                     _mainHandler.Handle(customer, StatusTypes.Customer, ActionTypes.Add);
-                    _mainHandler.Handle(null,StatusTypes.Customer,ActionTypes.SaveChanges);
+                    _mainHandler.Handle(null, StatusTypes.Customer, ActionTypes.SaveChanges);
                     LoadData();
                 }
                 catch (Exception ex)

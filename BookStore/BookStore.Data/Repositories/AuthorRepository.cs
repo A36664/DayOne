@@ -1,10 +1,10 @@
-﻿using BookStore.Model.Entities;
-using System;
+﻿using BookStore.Data.Infrastructure;
+using BookStore.Model.Entities;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
+using BookStore.Data.EF;
+using Moq;
 
 namespace BookStore.Data.Repositories
 {
@@ -20,6 +20,9 @@ namespace BookStore.Data.Repositories
         /// <returns></returns>
         public List<Author> GetByAlias(string alias)
         {
+
+          
+
             return DbContext.Authors.Where(x => x.Name.Contains(alias)).ToList();
         }
     }

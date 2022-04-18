@@ -93,6 +93,10 @@
       <Project>{FBCE38D2-1B91-48BD-B67D-9ED33F015CDB}</Project>
       <Name>BookStore.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookStore.Shared\BookStore.Shared.csproj">
+      <Project>{112979DD-D4D0-469C-9320-15F415791A7B}</Project>
+      <Name>BookStore.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

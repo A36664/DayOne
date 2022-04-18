@@ -1,5 +1,5 @@
-﻿using System;
-using BookStore.Data.EF;
+﻿using BookStore.Data.EF;
+using System;
 
 namespace BookStore.Data.Infrastructure
 {

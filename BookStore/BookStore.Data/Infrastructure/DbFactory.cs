@@ -23,6 +23,6 @@ namespace BookStore.Data.Infrastructure
             return _context ?? (_context = new BookStoreContext());
         }
 
-       
+
     }
 }

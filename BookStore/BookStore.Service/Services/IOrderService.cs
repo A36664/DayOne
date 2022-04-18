@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Model.Entities;
+﻿using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
+using System.Collections.Generic;
 
 namespace BookStore.Service.Services
 {
@@ -12,6 +8,6 @@ namespace BookStore.Service.Services
     {
         List<OrderViewModel> GetAllOrder();
 
-       Order Create(Order order,List<OrderDetail> orderDetails);
+        Order Create(Order order, List<OrderDetail> orderDetails);
     }
 }

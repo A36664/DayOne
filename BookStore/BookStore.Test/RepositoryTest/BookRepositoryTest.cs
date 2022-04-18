@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookStore.Data.Infrastructure;
+﻿using BookStore.Data.Infrastructure;
 using BookStore.Data.Repositories;
 using BookStore.Model.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace BookStore.Test.RepositoryTest
 {
@@ -31,7 +26,7 @@ namespace BookStore.Test.RepositoryTest
         {
             var books = _bookRepository.GetAllBooks().ToList();
             Assert.IsNotNull(books);
-            Assert.IsTrue(books.Count>0);
+            Assert.IsTrue(books.Count > 0);
         }
         [TestMethod]
         public void Book_Repository_Add()

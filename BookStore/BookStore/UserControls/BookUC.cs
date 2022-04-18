@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
-using BookStore.Model.Entities;
+﻿using BookStore.Model.Entities;
 using BookStore.Model.ViewModels;
 using BookStore.Service;
 using BookStore.Shared;
 using Microsoft.VisualStudio.Utilities.Internal;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 using static BookStore.Shared.Constants;
 
 namespace BookStore.UserControls
@@ -19,14 +19,14 @@ namespace BookStore.UserControls
 
 
         private Author _selectAuthor;
-        private  readonly  IMainHandler _mainHandler;
+        private readonly IMainHandler _mainHandler;
         /// <summary>
         /// initial constructor and DI for MainHandler 
         /// </summary>
         /// <param name="mainHandler"></param>
         public BookUc(IMainHandler mainHandler)
         {
-            _mainHandler= mainHandler;
+            _mainHandler = mainHandler;
             InitializeComponent();
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace BookStore.UserControls
         /// </summary>
         private void LoadCategories()
         {
-            var categories =  _mainHandler.Handle(null, StatusTypes.Category, ActionTypes.GetAll) as IEnumerable<Category>;
+            var categories = _mainHandler.Handle(null, StatusTypes.Category, ActionTypes.GetAll) as IEnumerable<Category>;
             cbxCategory.DisplayMember = "Name";
             if (categories != null) cbxCategory.DataSource = categories.ToList();
         }
@@ -82,11 +82,11 @@ namespace BookStore.UserControls
             if (authors != null) cbxAuthor.DataSource = authors.ToList();
         }
 
-      /// <summary>
-      /// event combobox category select change
-      /// </summary>
-      /// <param name="sender"></param>
-      /// <param name="e"></param>
+        /// <summary>
+        /// event combobox category select change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             var cmb = (ComboBox)sender;
@@ -145,12 +145,12 @@ namespace BookStore.UserControls
             {
                 var book = new Book()
                 {
-                    Name=txtName.Text,
-                    Price=Convert.ToDecimal(txtPrice.Text),
-                    Stock=Convert.ToInt32(txtStock.Text),
-                    OriginalPrice=Convert.ToDecimal(txtOriginPrice.Text),
-                    AuthorId=_selectAuthor.Id,
-                    CategoryId= _selectCategory.Id
+                    Name = txtName.Text,
+                    Price = Convert.ToDecimal(txtPrice.Text),
+                    Stock = Convert.ToInt32(txtStock.Text),
+                    OriginalPrice = Convert.ToDecimal(txtOriginPrice.Text),
+                    AuthorId = _selectAuthor.Id,
+                    CategoryId = _selectCategory.Id
                 };
                 _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.Add);
                 _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.SaveChanges);
@@ -173,7 +173,7 @@ namespace BookStore.UserControls
             txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
             txtStock.Text = dataGridViewRow.Cells[2].Value.ToString();
             txtPrice.Text = dataGridViewRow.Cells[3].Value.ToString();
-               
+
             cbxAuthor.Text = dataGridViewRow.Cells[4].Value.ToString();
             cbxCategory.Text = dataGridViewRow.Cells[5].Value.ToString();
         }
