@@ -183,8 +183,9 @@
             this.btnF12.Name = "btnF12";
             this.btnF12.Size = new System.Drawing.Size(66, 20);
             this.btnF12.TabIndex = 7;
-            this.btnF12.Text = "終了";
+            this.btnF12.Text = "F12";
             this.btnF12.UseVisualStyleBackColor = true;
+            this.btnF12.Click += new System.EventHandler(this.btnF12_Click);
             // 
             // btnF11
             // 
@@ -192,8 +193,9 @@
             this.btnF11.Name = "btnF11";
             this.btnF11.Size = new System.Drawing.Size(66, 20);
             this.btnF11.TabIndex = 6;
-            this.btnF11.Text = "戻る";
+            this.btnF11.Text = "F11";
             this.btnF11.UseVisualStyleBackColor = true;
+            this.btnF11.Click += new System.EventHandler(this.btnF11_Click);
             // 
             // btnF10
             // 
@@ -202,6 +204,7 @@
             this.btnF10.Size = new System.Drawing.Size(66, 20);
             this.btnF10.TabIndex = 5;
             this.btnF10.UseVisualStyleBackColor = true;
+            this.btnF10.Click += new System.EventHandler(this.btnF10_Click);
             // 
             // btnF9
             // 
@@ -210,6 +213,7 @@
             this.btnF9.Size = new System.Drawing.Size(66, 20);
             this.btnF9.TabIndex = 4;
             this.btnF9.UseVisualStyleBackColor = true;
+            this.btnF9.Click += new System.EventHandler(this.btnF9_Click);
             // 
             // btnF8
             // 
@@ -218,8 +222,9 @@
             this.btnF8.Name = "btnF8";
             this.btnF8.Size = new System.Drawing.Size(66, 20);
             this.btnF8.TabIndex = 3;
-            this.btnF8.Text = "検索";
+            this.btnF8.Text = "F8";
             this.btnF8.UseVisualStyleBackColor = true;
+            this.btnF8.Click += new System.EventHandler(this.btnF8_Click);
             // 
             // btnF7
             // 
@@ -227,8 +232,9 @@
             this.btnF7.Name = "btnF7";
             this.btnF7.Size = new System.Drawing.Size(66, 20);
             this.btnF7.TabIndex = 2;
-            this.btnF7.Text = "出力";
+            this.btnF7.Text = "F7";
             this.btnF7.UseVisualStyleBackColor = true;
+            this.btnF7.Click += new System.EventHandler(this.btnF7_Click);
             // 
             // btnF6
             // 
@@ -237,8 +243,9 @@
             this.btnF6.Name = "btnF6";
             this.btnF6.Size = new System.Drawing.Size(66, 20);
             this.btnF6.TabIndex = 1;
-            this.btnF6.Text = "登録 ";
+            this.btnF6.Text = "F6";
             this.btnF6.UseVisualStyleBackColor = true;
+            this.btnF6.Click += new System.EventHandler(this.btnF6_Click);
             // 
             // btnF5
             // 
@@ -247,8 +254,9 @@
             this.btnF5.Name = "btnF5";
             this.btnF5.Size = new System.Drawing.Size(66, 20);
             this.btnF5.TabIndex = 1;
-            this.btnF5.Text = "取消";
+            this.btnF5.Text = "F5";
             this.btnF5.UseVisualStyleBackColor = true;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
             // btnF4
             // 
@@ -256,7 +264,9 @@
             this.btnF4.Name = "btnF4";
             this.btnF4.Size = new System.Drawing.Size(66, 20);
             this.btnF4.TabIndex = 1;
+            this.btnF4.Text = "Order";
             this.btnF4.UseVisualStyleBackColor = true;
+            this.btnF4.Click += new System.EventHandler(this.btnF4_Click);
             // 
             // btnF3
             // 
@@ -264,8 +274,9 @@
             this.btnF3.Name = "btnF3";
             this.btnF3.Size = new System.Drawing.Size(66, 20);
             this.btnF3.TabIndex = 1;
-            this.btnF3.Text = "削除\r\n";
+            this.btnF3.Text = "Author";
             this.btnF3.UseVisualStyleBackColor = true;
+            this.btnF3.Click += new System.EventHandler(this.btnF3_Click);
             // 
             // btnF2
             // 
@@ -273,8 +284,9 @@
             this.btnF2.Name = "btnF2";
             this.btnF2.Size = new System.Drawing.Size(66, 20);
             this.btnF2.TabIndex = 1;
-            this.btnF2.Text = "訂正";
+            this.btnF2.Text = "Book";
             this.btnF2.UseVisualStyleBackColor = true;
+            this.btnF2.Click += new System.EventHandler(this.btnF2_Click);
             // 
             // btnF1
             // 
@@ -282,8 +294,9 @@
             this.btnF1.Name = "btnF1";
             this.btnF1.Size = new System.Drawing.Size(66, 20);
             this.btnF1.TabIndex = 0;
-            this.btnF1.Text = "入力";
+            this.btnF1.Text = "Customer";
             this.btnF1.UseVisualStyleBackColor = true;
+            this.btnF1.Click += new System.EventHandler(this.btnF1_Click);
             // 
             // pnPressKeyF
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookStore.Model.Entities;
 
 namespace BookStore.Model.ViewModels
 {
@@ -17,5 +18,6 @@ namespace BookStore.Model.ViewModels
 
         public string CustomerPhoneNumber { get; set; }
         public string CustomerEmail { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; }
     }
 }

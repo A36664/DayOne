@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookStore.Model.Entities;
 
 namespace BookStore.Service.Services
 {
@@ -13,6 +14,6 @@ namespace BookStore.Service.Services
         void Delete(int id);
         void Update(T customer);
         void SaveChanges();
-        void Add(T customer);
+        T Add(T customer);
     }
 }

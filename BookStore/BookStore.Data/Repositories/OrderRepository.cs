@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -22,11 +23,10 @@ namespace BookStore.Data.Repositories
         public List<OrderViewModel> GetAllOrders()
         {
 
-            //object query;
-            //query = DbContext.Customers.Include(x => x.Orders.Select(od => od.OrderDetails.Select(b => b.Book)).Select(h => new OrderViewModel()
-            //{
-            //    BookId = h.
-            //}))
+
+            var orders = DbContext.Orders.Include(od => od.Customer).Include(x=>x.OrderDetails.Select(od=>od.Book)).ToList();
+           
+            
 
             return new List<OrderViewModel>();
         }

@@ -20,25 +20,34 @@ namespace BookStore.UserControls
 
         private Author _selectAuthor;
         private  readonly  IMainHandler _mainHandler;
-
+        /// <summary>
+        /// initial constructor and DI for MainHandler 
+        /// </summary>
+        /// <param name="mainHandler"></param>
         public BookUc(IMainHandler mainHandler)
         {
             _mainHandler= mainHandler;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Load first run
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BookUC_Load(object sender, EventArgs e)
         {
             LoadData();
             LoadCategories();
             LoadAuthors();
         }
-
+        /// <summary>
+        /// Load data books for data grid view
+        /// </summary>
         private void LoadData()
         {
             var books = _mainHandler.Handle(null, StatusTypes.Book, ActionTypes.GetAllBooks) as IEnumerable<BookViewModel>;
 
-            DataTable dataTable = new DataTable();
+            var dataTable = new DataTable();
             dataTable.Columns.Add(BookFields.BookId, typeof(int));
             dataTable.Columns.Add(BookFields.Name, typeof(string));
             dataTable.Columns.Add(BookFields.Stock, typeof(string));
@@ -54,13 +63,18 @@ namespace BookStore.UserControls
 
             dgdBook.DataSource = dataTable;
         }
-
+        /// <summary>
+        /// Load all categories
+        /// </summary>
         private void LoadCategories()
         {
             var categories =  _mainHandler.Handle(null, StatusTypes.Category, ActionTypes.GetAll) as IEnumerable<Category>;
             cbxCategory.DisplayMember = "Name";
             if (categories != null) cbxCategory.DataSource = categories.ToList();
         }
+        /// <summary>
+        /// Load all authors
+        /// </summary>
         private void LoadAuthors()
         {
             var authors = _mainHandler.Handle(null, StatusTypes.Author, ActionTypes.GetAll) as IEnumerable<Author>;
@@ -68,23 +82,35 @@ namespace BookStore.UserControls
             if (authors != null) cbxAuthor.DataSource = authors.ToList();
         }
 
-      
+      /// <summary>
+      /// event combobox category select change
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox cmb = (ComboBox)sender;
-            Category selectedValue = (Category)cmb.SelectedValue;
+            var cmb = (ComboBox)sender;
+            var selectedValue = (Category)cmb.SelectedValue;
 
             _selectCategory = selectedValue;
         }
-
+        /// <summary>
+        /// event combobox author when select change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox cmb = (ComboBox)sender;
-            Author selectedValue = (Author)cmb.SelectedValue;
+            var cmb = (ComboBox)sender;
+            var selectedValue = (Author)cmb.SelectedValue;
 
             _selectAuthor = selectedValue;
         }
-
+        /// <summary>
+        /// event click add a book
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text.IsNullOrWhiteSpace())
@@ -113,35 +139,37 @@ namespace BookStore.UserControls
             }
 
 
-
-            if (MessageBox.Show(Commons.Messages.Book.MessageFive, Commons.Messages.MessageWarring, MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (MessageBox.Show(Commons.Messages.Book.MessageFive, Commons.Messages.MessageWarring,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning) != DialogResult.OK) return;
+            try
             {
-                try
+                var book = new Book()
                 {
-                    var book = new Book()
-                    {
-                       Name=txtName.Text,
-                       Price=Convert.ToDecimal(txtPrice.Text),
-                       Stock=Convert.ToInt32(txtStock.Text),
-                       OriginalPrice=Convert.ToDecimal(txtOriginPrice.Text),
-                       AuthorId=_selectAuthor.Id,
-                       CategoryId= _selectCategory.Id
-                    };
-                    _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.Add);
-                    _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.SaveChanges);
-                    LoadData();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(Commons.Messages.MessageError + ex.Message, Commons.Messages.MessageError, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    Name=txtName.Text,
+                    Price=Convert.ToDecimal(txtPrice.Text),
+                    Stock=Convert.ToInt32(txtStock.Text),
+                    OriginalPrice=Convert.ToDecimal(txtOriginPrice.Text),
+                    AuthorId=_selectAuthor.Id,
+                    CategoryId= _selectCategory.Id
+                };
+                _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.Add);
+                _mainHandler.Handle(book, StatusTypes.Book, ActionTypes.SaveChanges);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Commons.Messages.MessageError + ex.Message, Commons.Messages.MessageError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /// <summary>
+        /// event click on cell of data grid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgdBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indexOfContent = e.RowIndex;
-            DataGridViewRow dataGridViewRow = dgdBook.Rows[indexOfContent];
+            var indexOfContent = e.RowIndex;
+            var dataGridViewRow = dgdBook.Rows[indexOfContent];
             txtName.Text = dataGridViewRow.Cells[1].Value.ToString();
             txtStock.Text = dataGridViewRow.Cells[2].Value.ToString();
             txtPrice.Text = dataGridViewRow.Cells[3].Value.ToString();

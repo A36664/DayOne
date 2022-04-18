@@ -31,11 +31,12 @@ namespace BookStore.Service.Services
         ///  Add a book into table book
         /// </summary>
         /// <param name="book"></param>
-        public void Add(Book book)
+        public Book Add(Book book)
         {
             Log.Info("Begin: Add");
-            _bookRepository.Add(book);
+          var   result=_bookRepository.Add(book);
             Log.Info("End: Add");
+            return result;
         }
 
        

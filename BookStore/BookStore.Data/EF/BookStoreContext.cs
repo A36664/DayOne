@@ -12,7 +12,7 @@ namespace BookStore.Data.EF
 {
     public class BookStoreContext : DbContext
     {
-        public BookStoreContext() : base(ConfigurationManager.ConnectionStrings["MyDBConnectionString"].ConnectionString)
+        public BookStoreContext() : base("MyDBConnectionString")
         {
 
         }

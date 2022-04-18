@@ -15,12 +15,14 @@ namespace BookStore.Service.Services
     public class OrderService:IOrderService
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IOrderDetailRepository _orderDetailRepository;
         private readonly IUnitOfWork _unitOfWork;
         private static readonly ILog Log = LogHelper.GetLogger();
-        public OrderService(IOrderRepository orderRepository,IUnitOfWork unitOfWork)
+        public OrderService(IOrderRepository orderRepository,IUnitOfWork unitOfWork, IOrderDetailRepository orderDetailRepository)
         {
             _orderRepository=orderRepository;
             _unitOfWork = unitOfWork;
+            _orderDetailRepository = orderDetailRepository;
         }
         public IEnumerable<Order> GetAll()
         {
@@ -47,7 +49,7 @@ namespace BookStore.Service.Services
             _unitOfWork.Commit();
         }
 
-        public void Add(Order customer)
+        public Order Add(Order customer)
         {
             throw new NotImplementedException();
         }
@@ -59,6 +61,28 @@ namespace BookStore.Service.Services
             Log.Info("End: GetAllOrder");
             return orders;
 
+        }
+
+        public Order Create(Order order, List<OrderDetail> orderDetails)
+        {
+            try
+            {
+                _orderRepository.Add(order);
+                _unitOfWork.Commit();
+
+                foreach (var orderDetail in orderDetails)
+                {
+                    orderDetail.OrderId = order.OrderId;
+                    _orderDetailRepository.Add(orderDetail);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+                throw new Exception();
+            }
+            return order;
         }
     }
 }

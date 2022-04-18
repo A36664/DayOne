@@ -25,11 +25,12 @@ namespace BookStore.Service.Services
         ///  Add a customer
         /// </summary>
         /// <param name="customer"></param>
-        public void Add(Customer customer)
+        public Customer Add(Customer customer)
         {
             Log.Info("Begin: Add");
-            _customerRepository.Add(customer);
+          var result=   _customerRepository.Add(customer);
             Log.Info("End: Add");
+            return result;
         }
         /// <summary>
         /// Delete a customer by id

@@ -19,3 +19,6 @@ C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Shared\bin\Debug\log4net.dll
 C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Shared\bin\Debug\log4net.xml
 C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.csproj.CopyComplete
 C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.csproj.AssemblyReference.cache
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Shared\bin\Debug\log4net.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Shared\bin\Debug\log4net.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Shared\obj\Debug\BookStore.Shared.csproj.CopyComplete

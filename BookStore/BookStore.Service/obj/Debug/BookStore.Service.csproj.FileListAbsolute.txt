@@ -62,3 +62,18 @@ C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Service\bin\Debug\Serilog.dll
 C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Service\bin\Debug\Serilog.xml
 C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Service\bin\Debug\log4net.dll
 C:\Users\A36664\Desktop\DayOne\BookStore\BookStore.Service\bin\Debug\log4net.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\BookStore.Service.dll.config
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\log4net.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\Serilog.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Buffers.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Memory.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\log4net.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\Serilog.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Buffers.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Memory.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\nvluc\OneDrive - CMC Global\Desktop\DayoneExam\DayOne\BookStore\BookStore.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

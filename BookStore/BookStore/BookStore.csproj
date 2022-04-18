@@ -375,9 +375,6 @@
     <Compile Include="UserControls\BookUc.Designer.cs">
       <DependentUpon>BookUc.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CategoryUc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControls\CustomerUc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -413,9 +410,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\BookUc.resx">
       <DependentUpon>BookUc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CategoryUc.resx">
-      <DependentUpon>CategoryUc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomerUc.resx">
       <DependentUpon>CustomerUc.cs</DependentUpon>

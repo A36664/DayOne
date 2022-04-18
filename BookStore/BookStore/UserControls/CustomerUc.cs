@@ -26,6 +26,10 @@ namespace BookStore.UserControls
         {
             LoadData();
         }
+        /// <summary>
+        /// Load all customer or search customer by info
+        /// </summary>
+        /// <param name="search"></param>
         private void LoadData(string search = null)
         {
 
@@ -54,7 +58,11 @@ namespace BookStore.UserControls
 
             dgdCustomer.DataSource = dataTable;
         }
-
+        /// <summary>
+        /// event click on cell of data gird
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgdCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var indexOfContent = e.RowIndex;
@@ -63,7 +71,11 @@ namespace BookStore.UserControls
             txtPhone.Text = dataGridViewRow.Cells[2].Value.ToString();
             txtEmail.Text = dataGridViewRow.Cells[3].Value.ToString();
         }
-
+        /// <summary>
+        /// event add a customer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtName.Text.IsNullOrWhiteSpace())
@@ -107,12 +119,16 @@ namespace BookStore.UserControls
 
 
         }
-
+        /// <summary>
+        /// event click search
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtSearch.Text.IsNullOrWhiteSpace())
             {
-                MessageBox.Show("Vui lòng nhập giá trị tìm", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Commons.Messages.MessageSearch, Commons.Messages.MessageWarring, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSearch.Focus();
                 return;
             }

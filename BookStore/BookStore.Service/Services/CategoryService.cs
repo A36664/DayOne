@@ -25,11 +25,12 @@ namespace BookStore.Service.Services
         /// Add a category
         /// </summary>
         /// <param name="category"></param>
-        public void Add(Category category)
+        public Category Add(Category category)
         {
             Log.Info("Begin: Add");
-            _categoryRepository.Add(category);
+          var result=  _categoryRepository.Add(category);
             Log.Info("End: Add");
+            return result;
         }
         /// <summary>
         /// Delete a category

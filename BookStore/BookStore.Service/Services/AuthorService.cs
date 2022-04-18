@@ -25,11 +25,12 @@ namespace BookStore.Service.Services
         /// Add an author
         /// </summary>
         /// <param name="author"></param>
-        public void Add(Author author)
+        public Author Add(Author author)
         {
             Log.Info("Begin: Add");
-            _authorRepository.Add(author);
+           var result= _authorRepository.Add(author);
             Log.Info("End: Add");
+            return result;
         }
         /// <summary>
         /// Delete an author by id

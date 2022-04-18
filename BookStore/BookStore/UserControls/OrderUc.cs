@@ -41,12 +41,19 @@ namespace BookStore.UserControls
             dataTable.Columns.Add(Constants.OrderFields.CustomerName, typeof(string));
             dataTable.Columns.Add(Constants.OrderFields.CustomerPhoneNumber, typeof(string));
             var orders = new List<OrderViewModel>();
-            
-                if (_mainHandler.Handle(null, Constants.StatusTypes.Order, Constants.ActionTypes.GetByAlias) is IEnumerable<OrderViewModel> results) orders.AddRange(results);
 
+            if (_mainHandler.Handle(null, Constants.StatusTypes.Order, Constants.ActionTypes.GetByAlias) is IEnumerable<OrderViewModel> results) orders.AddRange(results);
+            orders.AddRange(new List<OrderViewModel>()
+                {
+                    new OrderViewModel(){BookId = 1,BookName = "book1",CustomerEmail = "book1@gmail.com",CustomerName = "customer1",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
+                    new OrderViewModel(){BookId = 1,BookName = "book2",CustomerEmail = "book1@gmail.com",CustomerName = "customer2",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
+                    new OrderViewModel(){BookId = 1,BookName = "book3",CustomerEmail = "book1@gmail.com",CustomerName = "customer3",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
+                    new OrderViewModel(){BookId = 1,BookName = "book4",CustomerEmail = "book1@gmail.com",CustomerName = "customer4",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156},
+                    new OrderViewModel(){BookId = 1,BookName = "book5",CustomerEmail = "book1@gmail.com",CustomerName = "customer5",CustomerPhoneNumber = "0987823123",Price = 450,Quantity = 156}
+                });
             foreach (var order in orders)
             {
-                dataTable.Rows.Add(order.OrderId, order.BookId, order.BookName, order.Quantity,order.Price,order.CustomerName,order.CustomerPhoneNumber);
+                dataTable.Rows.Add(order.OrderId, order.BookId, order.BookName, order.Quantity, order.Price, order.CustomerName, order.CustomerPhoneNumber);
             }
 
             dgdOrder.DataSource = dataTable;

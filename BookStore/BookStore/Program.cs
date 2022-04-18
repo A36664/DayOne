@@ -67,13 +67,15 @@ namespace BookStore
             container.Register<IAuthorRepository, AuthorRepository>();
             container.Register<ICategoryRepository, CategoryRepository>();
             container.Register<IBookRepository, BookRepository>();
-
+            container.Register<IOrderRepository,OrderRepository>();
+            container.Register<IOrderDetailRepository,OrderDetailRepository>();
             // register services
             container.Register<ICustomerService, CustomerService>();
             container.Register<IBookService, BookService>();
             container.Register<IAuthorService, AuthorService>();
             container.Register<ICategoryService, CategoryService>();
             container.Register<IMainHandler,MainHandler>();
+            container.Register<IOrderService,OrderService>();
             AutoRegisterWindowsForms(container);
 
             container.Verify();

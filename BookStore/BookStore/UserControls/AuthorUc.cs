@@ -21,7 +21,11 @@ namespace BookStore.UserControls
             _mainHandler = mainHandler;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Load first run
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AuthorUC_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -58,7 +62,11 @@ namespace BookStore.UserControls
             dgdAuthor.DataSource = dataTable;
             Log.Info("End: LoadData");
         }
-
+        /// <summary>
+        /// click add a author
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Log.Info("Begin: btnAdd_Click");
@@ -113,9 +121,14 @@ namespace BookStore.UserControls
             txtPhone.Text = dataGridViewRow.Cells[2].Value.ToString();
             txtEmail.Text = dataGridViewRow.Cells[3].Value.ToString();
         }
-
+        /// <summary>
+        /// event click search
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            Log.Info("Begin: btnSearch_Click");
             if (StringExtensions.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 MessageBox.Show(Commons.Messages.MessageSearch, Commons.Messages.MessageWarring, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -124,8 +137,13 @@ namespace BookStore.UserControls
             }
 
             LoadData(txtSearch.Text);
+            Log.Info("End: btnSearch_Click");
         }
-
+        /// <summary>
+        /// event click reset
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtName.Text=null;
